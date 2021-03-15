@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.pug",
-    "build": "parcel build src/index.pug"
+    "prebuild": "rm -rf dist/*",
+    "build": "parcel build src/index.pug --public-url ./",
+    "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "keywords": [],
   "author": "Spencer Gunning <swcgunning@gmail.com> (https://github.com/aemx)",
@@ -13,6 +15,7 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
     "pug": "^3.0.2",
+    "push-dir": "^0.4.1",
     "stylus": "^0.54.8"
   },
   "dependencies": {}
