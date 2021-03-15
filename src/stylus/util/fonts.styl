@@ -1,0 +1,29 @@
+@font-face
+    font-family: "Inter"
+    font-style normal
+    font-weight 100 900
+    src url("/fonts/inter_slnt,wght.ttf")
+@font-face
+    font-family: "SF Condensed"
+    font-style normal
+    font-weight 300
+    src: url("/fonts/sf-condensed_light.ttf")
+@font-face
+    font-family: "SF Condensed"
+    font-style normal
+    font-weight 600
+    src: url("/fonts/sf-condensed_semibold.ttf")
+
+semibold = 600
+
+inter(sz, c=black, w=bold, st=normal, h=1)
+    font sz "Inter", sans-serif
+    color c
+    font-variation-settings "wght" w, "slnt" st
+    line-height sz*h
+sf(sz, c=black, w=300, st=normal, h=1.25)
+    font sz "SF Condensed", sans-serif
+    color c
+    font-weight w
+    font-style st
+    line-height sz*h

@@ -1,0 +1,56 @@
+@require '/util/animation'
+@require '/util/color'
+@require '/util/fonts'
+@require '/util/reset'
+@require '/util/vendor'
+
+hr
+    background-color main('33')
+    border 0
+    margin 12px auto
+    height 1px
+    max-width 400px
+.body
+    background-color bg()
+    display flex
+    flex-flow column nowrap
+    align-items stretch
+    align-content stretch
+    justify-content center
+    min-height 100vh
+    animation init ease 1s
+.main
+    padding 24px
+    margin auto 0
+.logo
+    width 400px
+    fill alt('99')
+    margin auto
+    margin-bottom 4px
+    transition 0.5s
+    &:hover
+        width 450px
+        fill alt()
+.desc
+    sf(22px, main())
+    text-align center
+.bold
+    sf(22px, main(), semibold)
+.alt
+    sf(14px, main('33'),, italic)
+    text-align center    
+.socials
+    display flex
+    flex-flow row wrap
+    justify-self center
+    justify-content space-between
+    margin 8px auto 0
+    max-width 390px
+    &-link
+        width 34px
+        fill main()
+        transition 0.2s
+        brand-colors = #1DA1F2 #9146FF #FF0000 #408294 #FF3300 #0078D4
+        for c, i in brand-colors
+            &:nth-child({i+1}):hover
+                fill c
