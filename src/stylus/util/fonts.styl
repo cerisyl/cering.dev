@@ -13,9 +13,18 @@
     font-style normal
     font-weight 600
     src: url("/fonts/sf-condensed_semibold.ttf")
+@font-face
+    font-family: "Euclid Circular"
+    font-style normal
+    font-weight normal
+    src: url("/fonts/euclid.ttf")
 
 semibold = 600
 
+euclid(sz, c=black, h=1)
+    font sz "Euclid Circular", sans-serif
+    color c
+    line-height sz*h
 inter(sz, c=black, w=bold, st=normal, h=1)
     font sz "Inter", sans-serif
     color c

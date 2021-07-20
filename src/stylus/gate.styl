@@ -1,0 +1,42 @@
+@require '/util/color'
+@require '/util/fonts'
+@require '/util/reset'
+@require '/util/vendor'
+.body
+    background-color bg()
+    margin 50px auto
+    width 750px
+.title
+    euclid(90px,#7E57C2)
+    letter-spacing -0.05em
+    transform scaleY(1.1)
+.sub
+    inter(26px, main('55'),100,-100)
+    letter-spacing 0.4em
+    margin-top -6px
+p
+    sf(20px, main())
+hr
+    background-color main('33')
+    border 0
+    margin 22px auto
+    height 1px
+    max-width 400px
+.foot
+    sf(16px, main('55'),,italic)
+    text-align center
+.socials
+    display flex
+    flex-flow row wrap
+    justify-self center
+    justify-content space-between
+    margin 10px auto
+    max-width 232px
+    &-link
+        width 18px
+        fill main()
+        transition 0.2s
+        brand-colors = #1DA1F2 #9146FF #FF0000 #408294 #FF3300 #0078D4
+        for c, i in brand-colors
+            &:nth-child({i+1}):hover
+                fill c
