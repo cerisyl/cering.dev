@@ -4,9 +4,9 @@
   "description": "CERiNG's website.",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.pug",
-    "prebuild": "rm -rf dist/*",
-    "build": "parcel build src/index.pug --public-url ./",
+    "clear": "rm -rf dist && rm -rf .cache",
+    "dev": "parcel src/*.pug",
+    "build": "npm run clear && parcel build src/*.pug --public-url ./",
     "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "keywords": [],
