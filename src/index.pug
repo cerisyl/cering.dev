@@ -1,36 +1,12 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="./stylus/main.styl")
-        link(rel="shortcut icon", href="./img/favicon.svg", type="image/svg+xml")
-        title home – cering.dev
+        - const title = "home"
+        - const desc = "multidisciplinary design · programming · computers"
+        include ./includes/_head.pug
     body.body
-        header.header
-            p &nbsp;
-            br
-            br
-            br
-        main.main
-            .logo: a.logo-link(href="https://cering.dev" target="_blank")
-                include /img/cering.svg
-            p.comm multidisciplinary design · programming · computers
-            br
-            p.linker #[a.link(href="/portfolio") portfolio] #[a.link(href="/resume") resume]
-        footer.footer
-            hr
-            .socials
-                a.socials-link(href="https://twitter.com/asteradd" target="_blank")
-                    include /img/icons/twitter.svg
-                a.socials-link(href="https://www.twitch.tv/cerhythm" target="_blank")
-                    include /img/icons/twitch.svg
-                a.socials-link(href="https://www.youtube.com/cering" target="_blank")
-                    include /img/icons/youtube.svg
-                a.socials-link(href="https://cering.bandcamp.com/" target="_blank")
-                    include /img/icons/bandcamp.svg
-                a.socials-link(href="https://soundcloud.com/cerhythm" target="_blank")
-                    include /img/icons/soundcloud.svg
-                a.socials-link(href="mailto:swcgunning+web@gmail.com" target="_blank")
-                    include /img/icons/mail.svg
-            p.footer-text © 2022 Spencer "CERiNG" Gunning
+        include ./includes/header.pug
+        main
+            h1.center welcome.
+            p.center you're here early, but don't fret&mdash; #[br] there's much more in store.
+        include ./includes/footer.pug

@@ -1,0 +1,27 @@
+.socials
+    display flex
+    flex-flow row wrap
+    justify-self center
+    justify-content space-between
+    margin 8px auto
+    max-width 195px
+    &-link
+        width 24px
+        fill mono
+        transition 0.2s
+        for c, i in brand-colors
+            &:nth-child({i+1}):hover
+                fill c
+                transform scale(1.2)
+.copyright
+    inter(12px, mono, 400)
+    text-align center
+    margin-bottom 4px
+    svg
+        margin-bottom -1px
+        width 50px
+        fill mono
+.build
+    ubuntu(10px, mono-shade)
+    text-align center
+    margin-bottom 0

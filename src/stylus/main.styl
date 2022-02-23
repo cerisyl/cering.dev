@@ -2,75 +2,54 @@
 @require './util/color'
 @require './util/fonts'
 @require './util/reset'
-@require './util/vendor'
+@require './components/header'
+@require './components/footer'
 
-a
-    text-decoration none
-h1
-    inter(48px, alt-alt, 700)
-    text-align center   
-    margin-bottom -8px
-hr
-    background-color main('33')
-    border 0
-    margin 12px auto
-    height 1px
-    max-width 400px
-.body
-    background-color bg()
+html
+    background-color mono-dark
+body
     display flex
     flex-flow column nowrap
-    align-items stretch
-    align-content stretch
-    justify-content center
-    min-height 100vh
+    justify-content space-between
     animation init ease 1s
-    padding 24px
-.main
-    padding 24px
-    margin auto 0
-.logo
-    margin 10px auto
-    margin-bottom 4px
-    text-align center
-    svg
-        width 400px
-        fill alt()
-.desc
-    inter(22px, main())
-    text-align center
-.comm
-    inter(16px, main('aa'),,1)
-    text-align center
-.linker
-    text-align center
-.link
-    inter(28px, #e8c6ff, 500)
-    text-align center
-    padding 24px
+    mar = 48px
+    margin mar
+    min-height "calc(100vh - %s * 2)" % mar
+
+// headers ////////////////////////////////////////////////////////////////////
+
+for v, i in (74 57 44 34)
+    h{i+1}
+        inter(unit(v, 'px'), alt, 700)
+        margin-bottom unit(4 * i - 4, 'px')
+    .subh{i+1}
+        inter(unit(34 - 4 * i, 'px'), mono, 200, 1, 0.5em)
+        margin-top -16px
+
+// body text //////////////////////////////////////////////////////////////////
+
+p
+    inter(20px, mono-tint, 400,, -0.02em)
+    line-height 24px
+    margin-bottom 12px
+    text-align justify
+    b
+        inter(20px, alt-tint, 700,, -0.02em)
+    i
+        inter(20px, mono-tint, 350, 1, -0.02em)
+a
+    text-decoration none
+    inter(20px, alt-tint, 400)
     transition 0.2s
     &:hover
-        inter(28px, #d08dff, 700)
-.bold
-    inter(22px, main(), semibold)
-.alt
-    inter(14px, main('33'),, 1)
-    text-align center   
-.socials
-    display flex
-    flex-flow row wrap
-    justify-self center
-    justify-content space-between
-    margin 20px auto 10px
-    max-width 232px
-    &-link
-        width 18px
-        fill main()
-        transition 0.2s
-        brand-colors = #1DA1F2 #9146FF #FF0000 #408294 #FF3300 #0078D4
-        for c, i in brand-colors
-            &:nth-child({i+1}):hover
-                fill c
-.footer-text
-    inter(16px, main('55'),,1)
+        inter(20px, alt, 700)
+code
+    display block
+    ubuntu(12px, mono)
+    line-height 16px
+    background mono-shade
+    padding 12px 16px
+    border-radius 8px
+    margin-bottom 12px
+.center
     text-align center

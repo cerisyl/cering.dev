@@ -1,10 +1,8 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        - noindex = true
+        - const title = "portfolio"
+        - const desc = "cering's portfolio"
+        include ./includes/_head.pug
         meta(http-equiv="refresh" content="0; https://drive.google.com/drive/folders/1EzkYdTDGF9bp-IH10AmyCjn76aMlhVJ6?usp=sharing")
-        link(rel="stylesheet", href="./stylus/main.styl")
-        link(rel="shortcut icon", href="./img/favicon.svg", type="image/svg+xml")
-        title portfolio – cering.dev
-    body.body

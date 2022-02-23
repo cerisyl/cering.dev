@@ -1,7 +1,6 @@
 @require './util/color'
 @require './util/fonts'
 @require './util/reset'
-@require './util/vendor'
 
 @keyframes awes
     0%
@@ -56,7 +55,6 @@ hr
         width 18px
         fill main()
         transition 0.2s
-        brand-colors = #1DA1F2 #9146FF #FF0000 #408294 #FF3300 #0078D4
         for c, i in brand-colors
             &:nth-child({i+1}):hover
                 fill c
