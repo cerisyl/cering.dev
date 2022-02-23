@@ -1,0 +1,43 @@
+@keyframes gate-awes
+    0%
+        filter hue-rotate(0deg)
+    50%
+        filter hue-rotate(100deg)
+    100%
+        filter hue-rotate(0deg)
+.gate
+    margin 50px auto
+    max-width 900px
+    &-link
+        &-red
+            inter(20px, cer-red, 700)
+        &-purple
+            inter(20px, alt, 700)
+        &-grey
+            inter(20px, cer-gray, 700)
+        &-yellow
+            inter(20px, cer-yellow, 700)
+        &-blue
+            inter(20px, cer-blue, 700)
+    &-title
+        euclid(90px, alt)
+        letter-spacing -0.05em
+    &-sub
+        inter(26px, mono, 200, 1)
+        letter-spacing 0.415em
+        margin-top -24px
+    &-hr
+        background-color mono-shade
+        border 0
+        margin 36px auto
+        height 2px
+        max-width 300px
+    &-sig
+        text-align right
+        &2
+            width 225px
+            fill main
+            margin -8px 0 0 auto
+    &-epic
+        inter(20px, alt, 700)
+        animation gate-awes 2s infinite
