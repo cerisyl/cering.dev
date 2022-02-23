@@ -3,14 +3,22 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="/stylus/main.styl")
-        link(rel="shortcut icon", href="/img/favicon.svg", type="image/svg+xml")
+        link(rel="stylesheet", href="./stylus/main.styl")
+        link(rel="shortcut icon", href="./img/favicon.svg", type="image/svg+xml")
         title home – cering.dev
     body.body
+        header.header
+            p &nbsp;
+            br
+            br
+            br
         main.main
             .logo: a.logo-link(href="https://cering.dev" target="_blank")
                 include /img/cering.svg
-            p.desc You're here early– #[span.bold welcome].
+            p.comm multidisciplinary design · programming · computers
+            br
+            p.linker #[a.link(href="/portfolio") portfolio] #[a.link(href="/resume") resume]
+        footer.footer
             hr
             .socials
                 a.socials-link(href="https://twitter.com/asteradd" target="_blank")
@@ -25,4 +33,4 @@ html(lang="en")
                     include /img/icons/soundcloud.svg
                 a.socials-link(href="mailto:swcgunning+web@gmail.com" target="_blank")
                     include /img/icons/mail.svg
-    // © 2021 Spencer "CERiNG" Gunning
+            p.footer-text © 2022 Spencer "CERiNG" Gunning

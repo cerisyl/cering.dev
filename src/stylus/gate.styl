@@ -1,7 +1,7 @@
-@require '/util/color'
-@require '/util/fonts'
-@require '/util/reset'
-@require '/util/vendor'
+@require './util/color'
+@require './util/fonts'
+@require './util/reset'
+@require './util/vendor'
 
 @keyframes awes
     0%
@@ -15,15 +15,15 @@
     margin 50px auto
     width 745px
 .title
-    euclid(90px,#7E57C2)
+    euclid(90px,#9950ff)
     letter-spacing -0.05em
     transform scaleY(1.1)
 .sub
-    inter(26px, main('55'),100,-100)
+    inter(26px, main('55'),100,1)
     letter-spacing 0.4em
     margin-top -6px
 p
-    sf(19px, main())
+    inter(19px, main())
     text-align justify
 hr
     background-color main('33')
@@ -39,10 +39,10 @@ hr
         margin 4px 0 0 auto
 
 .epic
-    sf(19px,#CE93D8,bold)
+    inter(19px,#d08dff,700)
     animation awes 2s infinite
-.foot
-    sf(16px, main('55'),,italic)
+.footer-text
+    inter(16px, main('55'),,1)
     text-align center
     margin-bottom -16px
 .socials
@@ -66,12 +66,12 @@ code
     font-size 17px
     color main('aa')
 .l_red
-    sf(19px,#EF5350,bold)
+    inter(19px,#EF5350, 700)
 .l_purple
-    sf(19px,#CE93D8,bold)
+    inter(19px,#CE93D8, 700)
 .l_grey
-    sf(19px,#78909C,bold)
+    inter(19px,#78909C, 700)
 .l_yellow
-    sf(19px,#FFF176,bold)
+    inter(19px,#FFF176, 700)
 .l_blue
-    sf(19px,#64B5F6,bold)
+    inter(19px,#64B5F6, 700)

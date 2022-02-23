@@ -2,21 +2,24 @@
   "name": "cering.dev",
   "version": "1.0.0",
   "description": "CERiNG's website.",
-  "main": "index.js",
-  "scripts": {
-    "clear": "rm -rf dist && rm -rf .cache",
-    "dev": "parcel src/*.pug",
-    "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose",
-    "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp src/CNAME dist/CNAME && npm run push"
-  },
-  "keywords": [],
-  "author": "Spencer Gunning <swcgunning@gmail.com> (https://github.com/aemx)",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+  "dependencies": {
     "pug": "^3.0.2",
-    "push-dir": "^0.4.1",
-    "stylus": "^0.54.8"
+    "stylus": "^0.56.0"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@parcel/config-default": "^2.3.2",
+    "@parcel/transformer-image": "^2.3.2",
+    "@parcel/transformer-pug": "^2.3.2",
+    "@parcel/transformer-stylus": "^2.3.2",
+    "parcel": "^2.3.2",
+    "push-dir": "^0.4.1",
+    "sharp": "^0.29.3"
+  },
+  "scripts": {
+    "clear": "rm -rf dist && rm -rf .parcel-cache",
+    "dev": "mkdir dist && cp -R src/docs dist/docs && parcel src/*.pug",
+    "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose",
+    "redev": "npm run clear && npm run dev",
+    "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp -R src/docs dist/docs && cp src/CNAME dist/CNAME && npm run push"
+  }
 }
