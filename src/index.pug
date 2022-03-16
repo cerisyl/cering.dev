@@ -6,7 +6,27 @@ html(lang="en")
         include ./includes/_head.pug
     body.body
         include ./includes/header.pug
-        main
-            h1.center welcome.
-            p.center you're here early, but don't fret&mdash; #[br] there's much more in store.
+        main.main
+            .container
+                h1.h1.hi.center hi, i'm 
+                    include ./img/cering.svg
+                    | .
+                p.text--big-nobr.center i'm a multidisciplinary designer living and working in #[span.text--big-b new jersey].
+                p.text.center i create websites, stories, interactive audiovisual experiences, games, and much more.
+            .expo__left
+                .expo__left--desc
+                    h2.h2 raritan public library
+                    h2.subh2--right web design + more
+                    br
+                    p.text.right i modernized and redesigned a 2000's-era website and brand image for the #[span.text--b Raritan Public Library], along with handling a plethora of it-related jobs.
+                .expo__left--gfx
+                    img(src="./img/expo/rpl.png")
+            .expo__right
+                .expo__right--desc
+                    h2.h2 arcaea
+                    h2.subh2 level design
+                    br
+                    p.text i designed and tested levels for #[span.text--b lowiro limited]'s flagship mobile rhythm game, #[span.text--bi Arcaea].
+                .expo__right--gfx
+                    img(src="./img/expo/arc.png")
         include ./includes/footer.pug

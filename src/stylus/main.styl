@@ -1,14 +1,20 @@
-@require './util/animation'
 @require './util/color'
 @require './util/fonts'
 @require './util/reset'
+@require './components/expo'
 @require './components/header'
 @require './components/footer'
+@require './components/scrollbar'
 @require './pages/gate'
+@require './pages/index'
 
 html
+    scroll-behavior smooth
+    -ms-overflow-style none
+    overflow overlay
+
+.body
     background-color mono-dark
-body
     display flex
     flex-flow column nowrap
     justify-content space-between
@@ -17,34 +23,60 @@ body
     margin mar
     min-height "calc(100vh - %s * 2)" % mar
 
+.main
+    margin 0 auto
+    display flex
+    flex-flow column nowrap
+    gap 48px
+
 // headers ////////////////////////////////////////////////////////////////////
 
 for v, i in (74 57 44 34)
-    h{i+1}
+    .h{i+1}
         inter(unit(v, 'px'), alt, 700)
-        margin-bottom unit(4 * i - 4, 'px')
+        margin-bottom unit(4 * i + 4, 'px')
     .subh{i+1}
-        inter(unit(34 - 4 * i, 'px'), mono, 200, 1, 0.5em)
-        margin-top -16px
+        inter(unit(26 - 4 * i, 'px'), mono, 200, 1, 0.5em)
+        margin-top -18px
+        margin-bottom unit(4 * i + 4, 'px')
+        &--right
+            @extend .subh{i+1}
+            text-align-last right
+            margin-right unit(-8 - 4 * i, 'px')
 
 // body text //////////////////////////////////////////////////////////////////
 
-p
+.text
     inter(20px, mono-tint, 400,, -0.02em)
     line-height 24px
-    margin-bottom 12px
+    margin-bottom 24px
     text-align justify
-    b
+    &--b
         inter(20px, alt-tint, 700,, -0.02em)
-    i
+    &--i
         inter(20px, mono-tint, 350, 1, -0.02em)
-a
+    &--bi
+        inter(20px, alt-tint, 650, 1, 1, -0.02em)
+    &--nobr
+        @extends .text
+        margin-bottom 0px
+    &--big
+        @extends .text
+        inter(26px, mono-tint, 400,, -0.02em)
+        &-b
+            inter(26px, alt-tint, 700,, -0.02em)
+        &-i
+            inter(26px, mono-tint, 350, 1, -0.02em)
+        &-nobr
+            @extends .text--big
+            margin-bottom 0px
+.link
     text-decoration none
     inter(20px, alt-tint, 400)
     transition 0.2s
     &:hover
         inter(20px, alt, 700)
-code
+.code
     display block
     ubuntu(12px, mono)
     line-height 16px
@@ -54,3 +86,5 @@ code
     margin-bottom 12px
 .center
     text-align center
+.right
+    text-align-last right

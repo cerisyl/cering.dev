@@ -1,8 +1,9 @@
-header
+.header
     display flex
     flex-flow row nowrap
     justify-content space-between
     align-items center
+    margin-bottom 64px
 .logo
     flex-grow 4
     justify-self center
@@ -16,7 +17,7 @@ header
             transform scale(1.05)
 .nav
     flex-grow 1
-    max-width 300px
+    max-width 550px
     display flex
     flex-flow row nowrap
     align-items space-between
@@ -24,8 +25,9 @@ header
     a
         display inline-block
         text-decoration none
-        inter(20px, main-tint, 700)
+        inter(24px, main-tint, 700)
         transition 0.2s
+        padding 6px
         &:hover
-            inter(20px, alt, 700)
+            inter(24px, alt, 700)
             transform scale(1.2)
