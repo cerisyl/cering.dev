@@ -38,7 +38,7 @@ for v, i in (74 57 44 34)
     .subh{i+1}
         inter(unit(26 - 4 * i, 'px'), mono, 200, 1, 0.5em)
         margin-top -18px
-        margin-bottom unit(4 * i + 4, 'px')
+        margin-bottom unit(4 * i + 20, 'px')
         &--right
             @extend .subh{i+1}
             text-align-last right
@@ -67,6 +67,8 @@ for v, i in (74 57 44 34)
             inter(26px, alt-tint, 700,, -0.02em)
         &-i
             inter(26px, mono-tint, 350, 1, -0.02em)
+        &-bi
+            inter(26px, alt-tint, 650, 1, 1, -0.02em)
         &-nobr
             @extends .text--big
             margin-bottom 0px
