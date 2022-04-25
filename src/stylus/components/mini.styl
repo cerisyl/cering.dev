@@ -1,0 +1,20 @@
+.mini
+    display flex
+    flex-flow column nowrap
+    padding 24px 28px
+    justify-content space-between
+    align-items stretch
+    width 392px
+    height 322px
+    axis(22px, mono-lite)
+    &-desc
+        text-align right
+    &-green
+        @extend .mini
+        gradient-bg("top, grads[3] 0%, grads[2] 150%")
+    &-red
+        @extend .mini
+        gradient-bg("top, grads[11] 0%, grads[0] 150%")
+    &-purple
+        @extend .mini
+        gradient-bg("top, grads[8] 0%, grads[9] 150%")

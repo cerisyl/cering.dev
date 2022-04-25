@@ -1,0 +1,22 @@
+.card
+    height 322px
+    flex 2
+    min-width 650px
+    axis(22px, mono-lite)
+    display flex
+    flex-flow column nowrap
+    padding 24px 28px
+    justify-content space-between
+    &-blue
+        @extend .card
+        gradient-bg("left, grads[8] 0%, grads[7] 100%")
+    &-orange
+        @extend .card
+        gradient-bg("left, grads[1] 0%, grads[0] 100%")
+    &-pink
+        @extend .card
+        gradient-bg("left, grads[9] 0%, grads[10] 100%")
+    &-desc
+        display flex
+        flex-flow row nowrap
+        justify-content space-between

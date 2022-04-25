@@ -1,0 +1,15 @@
+//- hero-style card
+mixin card(direction, color, headerText, prjctTitle, prjctType, prjctYear)
+    div(class=`sc-${direction}`)
+        div.sc-inner
+            h1.sc-head #{headerText}
+            div(class=`card-${color}`)
+                p.card-title #{prjctTitle}
+                div.card-desc
+                    p.card-type #{prjctType}
+                    p.card-year #{prjctYear}
+
+//- mini-card
+mixin mini(color, title)
+    div(class=`mini-${color}`)
+        p.mini-title #{title}

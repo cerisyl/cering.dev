@@ -3,31 +3,24 @@
     flex-flow row nowrap
     justify-content space-between
     align-items center
-    margin-bottom 64px
+    margin-bottom 32px
 .logo
-    flex-grow 4
-    justify-self center
-    align-self center
+    flex 10
     svg
-        width 250px
+        width 200px
+        margin-bottom -4px
         fill main
-        transition 0.2s
-        &:hover
-            fill alt
-            transform scale(1.05)
 .nav
-    flex-grow 1
-    max-width 550px
+    flex 9
+    max-width 800px
     display flex
     flex-flow row nowrap
     align-items space-between
     justify-content space-between
+    margin-right -16px
     a
         display inline-block
         text-decoration none
-        inter(24px, main-tint, 700)
-        transition 0.2s
-        padding 6px
-        &:hover
-            inter(24px, alt, 700)
-            transform scale(1.2)
+        inter(24px, mono-lite, 700)
+        padding 6px 16px
+        margin-top -2px

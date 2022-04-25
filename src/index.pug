@@ -7,46 +7,27 @@ html(lang="en")
     body.body
         include ./includes/header.pug
         main.main
-            .container
-                h1.h1.hi.center hi, i'm 
-                    include ./img/cering.svg
-                    | .
-                p.text--big-nobr.center i'm a multidisciplinary designer living and working in #[span.text--big-b new jersey].
-                p.text.center i create websites, stories, interactive audiovisual experiences, games, and much more.
-            .expo__left
-                .expo__left--desc
-                    h2.h2 web + graphic design
-                    h2.subh2--right raritan public library
-                    p.text--big.right i modernized and redesigned an antiquated brand image for the #[a.text--big-b(href="https://raritanlibrary.org/" target="_blank" rel="noopener") Raritan Public Library].
-                .expo__left--gfx
-                    img(src="./img/expo/rpl.png")
-            .expo__right
-                .expo__right--desc
-                    h2.h2 level design
-                    h2.subh2 arcaea
-                    p.text--big i design and test levels for #[a.text--big-b(href="https://lowiro.com" target="_blank" rel="noopener") lowiro limited]'s flagship mobile rhythm game, #[a.text--big-bi(href="https://arcaea.lowiro.com" target="_blank" rel="noopener") Arcaea].
-                .expo__right--gfx
-                    img(src="./img/expo/arc.png")
-            .expo__left
-                .expo__left--desc
-                    h2.h2 creative coding
-                    h2.subh2--right notitg
-                    p.text--big.right i create story-driven game content for an audience of thousands using #[span.text--big-b NotITG].
-                .expo__left--gfx
-                    img(src="./img/expo/nitg.png")
-            .expo__right
-                .expo__right--desc
-                    h2.h2 graphic design
-                    h2.subh2 design on commission
-                    p.text--big i'm constantly working with other independent clients to produce original graphics, audio, and other forms of media.
-                .expo__right--gfx
-                    img(src="./img/expo/design.png")
-            .container
-            .container
-                h2.h2.center want to work with me?
-                p.text--big-nobr.center shoot me an email at #[span.text--big-b swcgunning@gmail.com].
-                p.text.center i'd love to hear about what your project is all about!
-            .container
-                h3.h3.center looking for more?
-                p.text.center check out my #[span.text--b interactive resume] for a full list of my experience and qualifications.
+            +card(
+                "left", "blue",
+                "i'm a multi- disciplinary designer from new jersey.",
+                "NJSRT", "Project Lead", "2018+")
+            +card(
+                "right", "orange",
+                "i develop quality websites & ui/ux, built just for your userbase.",
+                "Raritan Public Library", "Webdev", "2021")
+            +card(
+                "left", "pink",
+                "i create playable experiences for audiences on a global scale.",
+                "Arcaea", "Level Design", "2020+")
+            h1.h1.center and so much more.
+            .minis-outer
+                .minis-inner
+                    +mini("green", "Graphic Design")
+                    +mini("red", "Music & Audio")
+                    +mini("purple", "resume")
+            h1.h1.center ready to work?
+            .call-outer
+                .call
+                    p.call-top email me at
+                    a.call-email(href="mailto:swcgunning@gmail.com") swcgunning@gmail.com
         include ./includes/footer.pug
