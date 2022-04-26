@@ -1,15 +1,21 @@
 //- hero-style card
-mixin card(direction, color, headerText, prjctTitle, prjctType, prjctYear)
+mixin card(direction, color, img, imgAlt, headerText, prjctTitle, prjctType, prjctYear)
     div(class=`sc-${direction}`)
         div.sc-inner
             h1.sc-head #{headerText}
-            div(class=`card-${color}`)
+            div(class=`card card-${color}`)
+                div.card-bg
+                img.card-img(src=img alt-imgAlt)
                 p.card-title #{prjctTitle}
-                div.card-desc
-                    p.card-type #{prjctType}
-                    p.card-year #{prjctYear}
+                p.card-desc #{prjctType}
 
 //- mini-card
 mixin mini(color, title)
     div(class=`mini-${color}`)
         p.mini-title #{title}
+
+//- micro-card
+mixin micro(color, title, desc)
+    div(class=`micro-${color}`)
+        p.micro-title #{title}
+        p.micro-desc #{desc}

@@ -8,26 +8,27 @@ html(lang="en")
         include ./includes/header.pug
         main.main
             +card(
-                "left", "blue",
+                "left", "blue", "./img/home/njsrt.png", "",
                 "i'm a multi- disciplinary designer from new jersey.",
-                "NJSRT", "Project Lead", "2018+")
+                "NJSRT", "Project Lead")
             +card(
-                "right", "orange",
+                "right", "orange", "./img/home/rpl.png", "",
                 "i develop quality websites & ui/ux, built just for your userbase.",
-                "Raritan Public Library", "Webdev", "2021")
+                "Raritan Public Library", "Webdev")
             +card(
-                "left", "pink",
+                "left", "pink",  "./img/home/arcaea.png", "",
                 "i create playable experiences for audiences on a global scale.",
-                "Arcaea", "Level Design", "2020+")
+                "Arcaea", "Level Design")
             h1.h1.center and so much more.
             .minis-outer
                 .minis-inner
                     +mini("green", "Graphic Design")
                     +mini("red", "Music & Audio")
                     +mini("purple", "resume")
-            h1.h1.center ready to work?
-            .call-outer
-                .call
-                    p.call-top email me at
-                    a.call-email(href="mailto:swcgunning@gmail.com") swcgunning@gmail.com
+            .ready
+                h1.h1.center ready to work?
+                p.text.center i'd love to hear more about your project.
+            .micros-outer
+                .micros-inner
+                    +micro("indigo", "Get in touch", "swcgunning@gmail.com")
         include ./includes/footer.pug
