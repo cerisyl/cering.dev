@@ -24,6 +24,30 @@ mixin micro(color, link, img, imgAlt, title, desc)
         p.micro-title #{title}
         p.micro-desc #{desc}
 
+//- itgxl release
+mixin itgxl(title, year, imgUrl)
+    .itgxl-detail
+        img.itgxl-img(src=`./img/itg/${imgUrl}.png?as=webp` alt=`The banner art for ${title}`)
+        .itgxl-info
+            .itgxl-titledate
+                p.text #[b.bold #{title}]
+                p.tsm #{year}
+            .itgxl-action
+                a.itgxl-link(href=`` target="_blank" rel="noopener" title="YouTube" aria-label="Watch on YouTube")
+                    include ../img/icons/youtube.svg
+
+//- itg release
+mixin itg(title, year, imgUrl)
+    .itg-detail
+        img.itg-img(src=`./img/itg/${imgUrl}.png?as=webp` alt=`The banner art for ${title}`)
+        .itg-info
+            .itg-titledate
+                p.text #[b.bold #{title}]
+                p.tsm #{year}
+            .itg-action
+                a.itg-link(href=`` target="_blank" rel="noopener" title="YouTube" aria-label="Watch on YouTube")
+                    include ../img/icons/youtube.svg
+
 //- music release
 mixin music(title, year, genre, length, imgUrl, scUrl, bcUrl)
     .release-detail
@@ -31,7 +55,7 @@ mixin music(title, year, genre, length, imgUrl, scUrl, bcUrl)
         .release-info
             .release-top
                 h3.h3.release-title #{title} #[span.text (#{year})]
-                div.release-genrelen
+                .release-genrelen
                     p.text #{genre}
                     p.text #{length}'
             .release-action

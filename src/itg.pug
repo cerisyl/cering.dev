@@ -7,4 +7,19 @@ html(lang="en")
     body.body
         include ./includes/header.pug
         main.main
+            h1.h1.center itg
+                h2.h2 pack releases
+                .itgxl
+                    +itgxl("Aster's Astral Adventure", "2020 - prs.", "aaa")
+                    +itgxl("Misfits in the Prairie", 2019, "misfits")
+                    +itgxl("Omega Dimension", 2019, "odim")
+                    +itgxl("NJSRT1: Ghost in the Machine", 2018, "njsrt")
+                h2.h2 single releases
+                .itg
+                    +itg("7thSense", 2021, "7thsense")
+                    +itg("chrono diver -fragment-", 2021, "chronodiver")
+                    +itg("Wavestep", 2021, "wavestep")
+                    +itg("The Fall", 2021, "thefall")
+                    +itg("conflict", 2020, "conflict")
+                    +itg("Venomous Firefly", 2020, "venom")
         include ./includes/footer.pug
