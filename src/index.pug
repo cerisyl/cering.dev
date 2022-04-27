@@ -7,17 +7,17 @@ html(lang="en")
     body.body
         include ./includes/header.pug
         main.main
-            h1.hi.h1.center hi, i'm 
+            h1.hi.h1.center hi, i’m 
                 include ./img/logo.svg
                 | .
             +showcase(
                 "blue", "left", "./itg.pug", "home/njsrt.png",
                 "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament",
-                "i'm a multi- disciplinary designer from new jersey.",
+                "i’m a multi- disciplinary designer from new jersey.",
                 "NJSRT", "Project Lead")
             +showcase(
                 "orange", "right", "./design.pug#webdev", "home/rpl.png",
-                "Desktop and mobile-sized screenshots of the Raritan Public Library's website, with some promotional assets",
+                "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets",
                 "i develop quality websites & ui/ux, built just for your userbase.",
                 "Raritan Public Library", "Webdev")
             +showcase(
@@ -37,12 +37,12 @@ html(lang="en")
                         "A computer monitor showing FL Studio 20 alongside various album art",
                         "Music & Audio")
                     +mini(
-                        "purple", "./about.pug", "home/resume.png",
+                        "purple", "./docs/resume_220426.pdf", "home/resume.png",
                         `Resume of Spencer "CERiNG" Gunning`,
                         "Resume")
             .ready
                 h2.h2.center ready to work?
-                p.text.center i'd love to hear more about your project.
+                p.text.center i’d love to hear more about your project.
             .micros-outer
                 .micros-inner
                     +micro("indigo", "mailto:swcgunning@gmail.com", "home/mail.png",

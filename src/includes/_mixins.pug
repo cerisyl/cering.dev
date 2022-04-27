@@ -1,10 +1,10 @@
 //- hero-style card
 mixin showcase(color, direction, link, img, imgAlt, headerText, prjctTitle, prjctType)
     div(class=`sc-${direction}`)
-        div.sc-inner
+        .sc-inner
             h2.sc-head #{headerText}
             a(class=`card card-${color}` href=link)
-                div.card-bg
+                .card-bg
                 img.card-img(src=`./img/${img}?as=webp` alt=imgAlt)
                 p.card-title #{prjctTitle}
                 p.card-desc #{prjctType}
@@ -12,14 +12,30 @@ mixin showcase(color, direction, link, img, imgAlt, headerText, prjctTitle, prjc
 //- mini-card
 mixin mini(color, link, img, imgAlt, title)
     a(class=`mini-${color}` href=link)
-        div.mini-bg
+        .mini-bg
         img.mini-img(src=`./img/${img}?as=webp` alt=imgAlt)
         p.mini-title #{title}
 
 //- micro-card
 mixin micro(color, link, img, imgAlt, title, desc)
     a(class=`micro-${color}` href=link)
-        div.micro-bg
+        .micro-bg
         img.micro-img(src=`./img/${img}?as=webp` alt=imgAlt)
         p.micro-title #{title}
         p.micro-desc #{desc}
+
+//- music release
+mixin music(title, year, genre, length, imgUrl, scUrl, bcUrl)
+    .release-detail
+        img.release-img(src=`./img/music/${imgUrl}.png?as=webp` alt=`The cover art for ${title}`)
+        .release-info
+            .release-top
+                h3.h3.release-title #{title} #[span.text (#{year})]
+                div.release-genrelen
+                    p.text #{genre}
+                    p.text #{length}'
+            .release-action
+                a.release-link(href=`https://soundcloud.com/cerhythm/${scUrl}` target="_blank" rel="noopener" title="SoundCloud" aria-label="Listen on SoundCloud")
+                    include ../img/icons/soundcloud.svg
+                a.release-link(href=`https://cering.bandcamp.com/${bcUrl}` target="_blank" rel="noopener" title="Bandcamp" aria-label="Listen on Bandcamp")
+                    include ../img/icons/bandcamp.svg

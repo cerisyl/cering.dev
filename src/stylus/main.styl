@@ -6,7 +6,7 @@
 @require './components/footer'
 @require './components/header'
 @require './components/scrollbar'
-@require './pages/gate'
+@require './pages/music'
 @require './pages/index'
 
 html
@@ -20,11 +20,13 @@ html
     justify-content space-between
 .main
     mar = 32px
-    margin mar 48px
+    padding mar 48px
     min-height "calc(100vh - %s * 2)" % mar
     display flex
     flex-flow column nowrap
     gap 48px
+    width 1368px
+    align-self center
 
 // headers ////////////////////////////////////////////////////////////////////
 
@@ -32,6 +34,10 @@ html
     inter(90px, lite, 700)
 .h2
     inter(56px, lite, 700)
+.h3
+    inter(34px, lite, 700)
+.hsub
+    axis(22px, lite)
 
 // body text //////////////////////////////////////////////////////////////////
 
@@ -42,11 +48,11 @@ html
     &-br
         @extend .text
         margin-bottom 24px
-.link
-    text-decoration none
-    inter(20px, alt-tint, 400)
-    transition 0.2s
-    &:hover
-        inter(20px, alt, 700)
+.bold
+    inter(18px, lite, 700,, -0.02em)
+    line-height 24px
+    text-align justify
 .center
     text-align center
+.right
+    text-align right
