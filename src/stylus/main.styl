@@ -13,19 +13,15 @@ html
     scroll-behavior smooth
     -ms-overflow-style none
     overflow overlay
-
 .body
-    background-color mono-dark
+    background-color dark
     display flex
     flex-flow column nowrap
     justify-content space-between
-    animation init ease 1s
+.main
     mar = 32px
     margin mar 48px
     min-height "calc(100vh - %s * 2)" % mar
-
-.main
-    margin 0 auto
     display flex
     flex-flow column nowrap
     gap 48px
@@ -33,14 +29,14 @@ html
 // headers ////////////////////////////////////////////////////////////////////
 
 .h1
-    inter(56px, mono-lite, 700)
+    inter(90px, lite, 700)
 .h2
-    inter(42px, mono-lite, 700)
+    inter(56px, lite, 700)
 
 // body text //////////////////////////////////////////////////////////////////
 
 .text
-    inter(18px, mono-lite, 400,, -0.02em)
+    inter(18px, lite, 400,, -0.02em)
     line-height 24px
     text-align justify
     &-br
@@ -52,15 +48,5 @@ html
     transition 0.2s
     &:hover
         inter(20px, alt, 700)
-.code
-    display block
-    ubuntu(12px, mono)
-    line-height 16px
-    background mono-shade
-    padding 12px 16px
-    border-radius 8px
-    margin-bottom 12px
 .center
     text-align center
-.right
-    text-align-last right
