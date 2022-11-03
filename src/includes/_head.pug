@@ -1,0 +1,28 @@
+meta(charset="UTF-8")
+title #{title} &ndash; CERiNG
+meta(name="title", content=`${title} – CERiNG`)
+meta(name="og:title", content=`${title} – CERiNG`)
+meta(name="description", content=`${desc}`)
+meta(name="og:description", content=`${desc}`)
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+if noindex
+    meta(name="robots", content="noindex, nofollow")
+else
+    meta(name="robots", content="index, nofollow")
+meta(name="format-detection" content="telephone=no")
+meta(name="format-detection" content="date=no")
+meta(name="format-detection" content="address=no")
+meta(name="format-detection" content="email=no")
+//meta(name="og:image", content="https://i.imgur.com/7QYOJPx.png")
+// ./img/main.png
+meta(name="og:image:alt", content="The logo of CERiNG.")
+meta(name="og:locale", content="en_US")
+meta(name="og:type" content="website")
+//meta(name="twitter:image", content="./img/main-twit.png")
+link#fav-light(rel="icon" href="./img/favicon.svg" type="image/svg+xml")
+link(rel="stylesheet", href="./stylus/main.styl")
+//- Mixin for thin link
+mixin thin(link, image, alt)
+    a(href=link target="_blank" rel="noopener")
+        source(srcset=`./img/home/${image}.png?as=webp` type="image/webp")
+        img.thin(src=`./img/home/${image}.png?as=jpeg` alt=alt type="image/jpeg")

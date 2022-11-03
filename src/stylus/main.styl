@@ -1,0 +1,114 @@
+@require './util/color'
+@require './util/fonts'
+@require './util/reset'
+@require './util/vendor'
+@require './components/footer'
+@require './components/header'
+@require './components/scrollbar'
+
+html
+    scroll-behavior smooth
+    -ms-overflow-style none
+    overflow overlay
+.body
+    background-color dark
+    display flex
+    flex-flow column nowrap
+    justify-content space-between
+    max-width 928px
+    align-self center
+    margin auto
+.main
+    mar = 32px
+    padding mar 48px
+    //min-height "calc(100vh - %s * 2)" % mar
+    display flex
+    flex-flow column nowrap
+    align-self center
+
+// headers ////////////////////////////////////////////////////////////////////
+
+.h1
+    inter(48px, lite, 700)
+    margin-bottom 12px
+    &-alt
+        @extend .h1
+        margin-bottom 0px
+.hsub
+    axis(22px, lite)
+
+// body text //////////////////////////////////////////////////////////////////
+
+.text
+    inter(14px, lite, 325,, -0.02em)
+    line-height 20px
+    text-align justify
+    &-br
+        @extend .text
+        margin-bottom 20px
+.link
+    inter(14px, grad[6], 700,, -0.02em)
+    line-height 20px
+    text-align justify
+    __hover__()
+.bold
+    inter(14px, lite, 700,, -0.02em)
+    line-height 20px
+    text-align justify
+    &-br
+        @extend .bold
+        margin-bottom 20px
+.center
+    text-align center
+.right
+    text-align right
+
+// stuff //////////////////////////////////////////////////////////////////////
+
+@keyframes awes
+    0%
+        filter hue-rotate(0deg)
+    50%
+        filter hue-rotate(100deg)
+    100%
+        filter hue-rotate(0deg)
+.thin
+    width 100%
+    max-width 820px
+    margin-bottom 4px
+    __hover__()
+.gate
+    &-hr
+        background-color dark-lite
+        border 0
+        margin 0px auto 20px
+        height 1px
+        width 200px
+    &-link
+        line-height 20px
+        text-align justify
+        __hover__()
+        &-red
+            @extend .gate-link
+            inter(14px, grad[0], 700,, -0.02em)
+        &-yellow
+            @extend .gate-link
+            inter(14px, grad[2], 700,, -0.02em)
+        &-blue
+            @extend .gate-link
+            inter(14px, grad[6], 700,, -0.02em)
+        &-purple
+            @extend .gate-link
+            inter(14px, grad[10], 700,, -0.02em)
+        &-grey
+            @extend .gate-link
+            inter(14px, lite-dark, 700,, -0.02em)
+        &-epic
+            @extend .gate-link-blue
+            animation awes 2s infinite
+    &-sig
+        text-align right
+        &2
+            width 225px
+            fill alt()
+            margin 4px 0 0 auto

@@ -1,0 +1,23 @@
+{
+  "name": "cering.dev",
+  "version": "1.0.0",
+  "description": "CERiNG's website.",
+  "dependencies": {
+    "pug": "^3.0.2",
+    "stylus": "^0.57.0"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.5.0",
+    "@parcel/transformer-image": "^2.5.0",
+    "@parcel/transformer-pug": "^2.5.0",
+    "@parcel/transformer-stylus": "^2.5.0",
+    "parcel": "^2.5.0",
+    "sharp": "^0.29.3"
+  },
+  "scripts": {
+    "clear": "rm -rf dist && rm -rf .parcel-cache",
+    "dev": "mkdir dist && cp -R src/docs dist/docs && parcel src/*.pug",
+    "redev": "npm run clear && npm run dev",
+    "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp -R src/docs dist/docs"
+  }
+}

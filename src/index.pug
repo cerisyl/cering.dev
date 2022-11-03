@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        - const title = "home"
+        - const desc = "multidisciplinary design · programming · computers"
+        include ./includes/_head.pug
+    body.body
+        include ./includes/header.pug
+        main.main
+            .container
+                h1.h1 modfiles + itg
+                +thin("https://github.com/aemx/mod-releases/raw/main/packs/NJSRT1.zip", "01", "njsrt")
+                +thin("https://github.com/aemx/mod-releases/raw/main/packs/Misfits%20in%20the%20Prairie.zip", "02", "misfits in the prairie")
+                +thin("https://github.com/aemx/mod-releases/raw/main/packs/Aster's%20Astral%20Adventure.zip", "03", "aster's astral adventure")
+                p.text looking for something else? check out the full list of my #[a.link(href="https://github.com/aemx/mod-releases" target="_blank" rel="noopener") mod releases] and #[a.link(href="https://github.com/aemx/itg-releases" target="_blank" rel="noopener") itg releases].
+                br
+                h1.h1 professional work
+                +thin("https://pbs.twimg.com/media/EoQQ9rqWMAIneW_?format=jpg&name=large", "04", "commission information: multidisciplinary design on demand")
+                +thin("http://raritanlibrary.org/", "05", "web development at raritan public library")
+                +thin("https://arcaea.lowiro.com/", "06", "level design at lowrio limited")
+                +thin("https://cering.bandcamp.com/", "07", "musical works")
+                br
+                h1.h1-alt contact me
+                p.text you can reach out to me through #[a.link(href="https://discordid.netlify.app/?id=210385938918932480" target="_blank" rel="noopener") discord], #[a.link(href="https://twitter.com/asteradd" target="_blank" rel="noopener") twitter], or via #[a.link(href="mailto:swcgunning+web@gmail.com/") email].
+        include ./includes/footer.pug
