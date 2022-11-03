@@ -4,6 +4,7 @@
   "description": "CERiNG's website.",
   "dependencies": {
     "pug": "^3.0.2",
+    "push-dir": "^0.4.1",
     "stylus": "^0.57.0"
   },
   "devDependencies": {
@@ -18,6 +19,7 @@
     "clear": "rm -rf dist && rm -rf .parcel-cache",
     "dev": "mkdir dist && cp -R src/docs dist/docs && parcel src/*.pug",
     "redev": "npm run clear && npm run dev",
-    "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp -R src/docs dist/docs"
+    "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp -R src/docs dist/docs",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   }
 }
