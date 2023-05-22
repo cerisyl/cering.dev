@@ -9,10 +9,11 @@ load-font(name, file, w=normal, st=normal)
 load-font("Inter", "inter_slnt,wght", 100 900)
 load-font("Axis", "axis")
 
-inter(sz, c=white, w=350, st=0, sp=-0.07em)
+inter(sz, c=white, w=350, st=0, sp=-0.055em)
     font sz "Inter", sans-serif
     color c
-    font-variation-settings "wght" w, "slnt" st*-10
+    font-weight w
+    font-style oblique + st*-10
     letter-spacing sp
 
 axis(sz, c=white, sp=-0.06em)
