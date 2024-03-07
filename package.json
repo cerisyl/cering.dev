@@ -2,18 +2,17 @@
   "name": "cering.dev",
   "version": "1.0.0",
   "description": "CERiNG's website.",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@parcel/config-default": "^2.12.0",
+    "@parcel/transformer-image": "^2.12.0",
+    "@parcel/transformer-pug": "^2.12.0",
+    "@parcel/transformer-stylus": "^2.12.0",
+    "parcel": "^2.12.0",
     "pug": "^3.0.2",
     "push-dir": "^0.4.1",
-    "stylus": "^0.59.0"
-  },
-  "devDependencies": {
-    "@parcel/config-default": "^2.9.3",
-    "@parcel/transformer-image": "^2.9.3",
-    "@parcel/transformer-pug": "^2.9.3",
-    "@parcel/transformer-stylus": "^2.9.3",
-    "parcel": "^2.9.3",
-    "sharp": "^0.31.1"
+    "sharp": "^0.31.1",
+    "stylus": "^0.63.0"
   },
   "scripts": {
     "clear": "rm -rf dist && rm -rf .parcel-cache",
