@@ -1,0 +1,16 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "portfolio"
+    - const desc = ""
+    title portfolio – cering.dev
+
+block content
+    h1.center portfolio
+    .portfolio-nav
+        a(href="./portfolio#gfx") graphics
+        a(href="./portfolio#web") webdev
+        a(href="./portfolio#games") game design
+        a(href="./portfolio#music") music
+    hr
+    #portfolio

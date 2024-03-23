@@ -1,0 +1,17 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "resume"
+    - const desc = ""
+    title resume – cering.dev
+
+block content
+    .resume-top
+        .resume-top-text
+            h1.extend-none Spencer “
+                include ./img/logo.svg
+                | ” Gunning
+            p.resume-sub multidisciplinary design · programming · computers
+            .resume-top-links#resume-links
+        img.resume-me(src="./img/me.png")
+    .resume#resume

@@ -2,7 +2,6 @@
   "name": "cering.dev",
   "version": "1.0.0",
   "description": "CERiNG's website.",
-  "dependencies": {},
   "devDependencies": {
     "@parcel/config-default": "^2.12.0",
     "@parcel/transformer-image": "^2.12.0",

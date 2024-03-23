@@ -6,15 +6,17 @@ load-font(name, file, w=normal, st=normal)
         src url("../fonts/" + file + ".woff2")
         font-display swap
 
-load-font("Inter", "inter_slnt,wght", 100 900)
+load-font("Helvetica Now Text", "hnt", 400)
+load-font("Helvetica Now Text", "hnt_italic", 400, italic)
+load-font("Helvetica Now Text", "hnt_bold", 600)
+load-font("Helvetica Now Text", "hnt_bold-italic", 600, italic)
 load-font("Axis", "axis")
 
-inter(sz, c=white, w=350, st=0, sp=-0.055em)
-    font sz "Inter", sans-serif
+inter(sz, c=white, w=400, st=normal)
+    font sz "Helvetica Now Text", sans-serif
     color c
     font-weight w
-    font-style oblique + st*-10
-    letter-spacing sp
+    font-style st
 
 axis(sz, c=white, sp=-0.06em)
     font sz "Axis", sans-serif
