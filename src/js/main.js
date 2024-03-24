@@ -50,7 +50,7 @@ if (page.includes('portfolio')) {
                 req(resume_lowiro).then(html => target.innerHTML = html);
                 links.innerHTML = `
                 <a class="action" href="./docs/SpencerGunning-Resume_20240323-lowiro.pdf">download as pdf</a>
-                <a class="action" href="./resume">view full resume</a>
+                <a class="action" href="./resume">view general resume</a>
                 `
             } else {
                 req(resume_default).then(html => target.innerHTML = html);
