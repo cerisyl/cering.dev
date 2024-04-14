@@ -1,30 +1,58 @@
 .header
-    display flex
-    flex-flow row nowrap
-    justify-content space-between
-    align-items center
-    margin-bottom 48px
-    //width 1464px
-    //align-self center
+  flex(row, nowrap, space-between, center)
+  padding 24px
+  background-color dark
+  animate(outline)
+  outline 0px solid gracer[1]
+  &-outline
+    outline 4px solid gracer[1]
+
 .logo
-    flex 10
+  display inline-block
+  margin -8px
+  padding 8px
+  &-small
     svg
-        width 200px
-        margin-bottom -4px
-        __hover2__()
+      width 44px
+      margin-bottom -4px
+  &-full
+    display none
+    svg
+      width 200px
+      margin-bottom -4px
+
 .nav
-    max-width 800px
-    display flex
-    flex-flow row nowrap
-    align-items space-between
-    justify-content space-between
-    gap 12px
-    a
-        display inline-block
-        text-decoration none
-        inter(20px, lite, 500)
-        letter-spacing -1px
-        padding 4px 8px
-        margin-top -2px
-        __hover3__()
-        border-radius 4px
+  flex(column, nowrap)
+  align-items space-between
+  justify-content space-between
+  position absolute
+  right 0
+  top calc(-100dvh + 98px)
+  background-color rgba(dark, 0.97)
+  backdrop-filter blur(4px)
+  z-index -1
+  width 100%
+  animate(top)
+  &-link
+    head(20px, lite-head, 600)
+    padding calc(-12px + (100dvh - 98px) / 9 / 2) 24px
+    hover-color( rgba(dark-lite, 0.2) )
+  &-dropdown
+    display none
+  &-active
+    top calc(98px)
+  &-toggle
+    margin -8px -12px -8px -8px
+    padding 8px
+    cursor pointer
+    animate(margin)
+    svg
+      animate(width)
+      width 40px
+      margin-bottom -6px
+      stroke lite
+
+.enlarge
+  margin -8px -15px -8px -8px
+  svg
+    width 48px

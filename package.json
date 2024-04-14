@@ -15,8 +15,8 @@
   },
   "scripts": {
     "clear": "rm -rf dist && rm -rf .parcel-cache",
-    "dev": "mkdir dist && cp -R src/docs dist/docs && cp CNAME dist/CNAME && parcel src/*.pug",
-    "redev": "npm run clear && npm run dev",
+    "dev": "parcel src/*.pug",
+    "redev": "npm run clear && mkdir dist && cp -R src/docs dist/docs && cp CNAME dist/CNAME && npm run dev",
     "build": "npm run clear && parcel build src/*.pug --public-url ./ && cp -R src/docs dist/docs && cp CNAME dist/CNAME",
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   }

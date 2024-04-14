@@ -1,20 +1,46 @@
 .footer
-    margin-top 48px
+  margin-top 16px
+  padding 24px
+  &-link
+    text(12px, lite, 400)
+    underline()
+  &-links
+    flex(row, nowrap, center, center, gap: 4px)
+    text(12px, lite, 400)
+  
 .socials
-    display flex
-    flex-flow row wrap
-    justify-self center
-    justify-content center
-    &-link
-        width 32px
-        fill dark-lite
-        padding 4px
-        margin 0 4px
-        for c, i in brand-mute
-            &:nth-child({i+1})
-                fill c
-                &:hover
-                    fill brand[i]
+  flex(column, gap: 4px)
+  margin-bottom -4px
+  &-main
+    flex(row, nowrap, center, center, gap: 16px)
+  &-extra
+    flex(row, nowrap, center, center, gap: 2px)
+  &-main-link
+    flex(row, wrap, center, center, gap: 6px)
+    padding 3px 8px
+    background-color dark-mid
+    outline 1px solid dark-lite
+    border-radius 9999px
+    hover-color(dark-lite)
+    svg
+      width 14px
+      fill lite
+    span
+      text(12px, lite, 400)
+    for v, i in #695eee #1d9bf0 #ff1744
+      &:nth-child({i+1}) svg
+        fill v
+  &-extra-link
+    svg
+      width 24px
+    fill dark-lite
+    padding 10px
+    fill lite
+    // https://hihayk.github.io/scale + 1 lighten
+    for v, i in #695eee #2899cd #58a1a4 #ff4e21 #9146ff #954176 #695eee
+      &:nth-child({i+1})
+        hover-svg(v)
 .copyright
-    inter(14px, dark-lite, 500)
-    text-align center
+  text(14px, dark-lite, 500)
+  text-align center
+  margin-bottom 0

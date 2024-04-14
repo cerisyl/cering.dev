@@ -22,8 +22,17 @@ meta(name="og:type" content="website")
 link#fav-light(rel="icon" href="./img/favicon.svg" type="image/svg+xml")
 link(rel="stylesheet", href="./stylus/main.styl")
 script(type="module" src="./js/main.js")
-//- Mixin for thin link
-mixin thin(link, image, alt)
-    a(href=link target="_blank" rel="noopener")
-        source(srcset=`./img/home/${image}.png?as=webp` type="image/webp")
-        img.thin(src=`./img/home/${image}.png?as=jpeg` alt=alt type="image/jpeg")
+//- Mixins ////////////////////////////////////////////////////////////////////
+mixin showcase(dir, color, image, title, role, alt, link)
+    .showcase-container
+        p(class=`showcase-${dir}-desc`)
+            block
+        div(class=`showcase-${dir} showcase-${color}`)
+            a.showcase-inner(href=link target="_blank" rel="noopener")
+                picture(class=`showcase-${dir}-image`)
+                    source(srcset=`./img/home/${image}.png?as=webp` alt=alt type="image/webp")
+                    img(src=`./img/home/${image}.png` type="image/png")
+        div(class=`showcase-${dir}-detail`)
+            p.showcase-title #{title}
+            p.showcase-role(class=`soft-${color}`) #{role}
+        div(class=`showcase-${dir}-shape`): include ../img/shape.svg

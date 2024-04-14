@@ -1,36 +1,31 @@
 @require './util/color'
 @require './util/fonts'
 @require './util/reset'
-@require './util/vendor'
+@require './util/mixins'
 
 body
     margin 0 auto
     padding 0 24px
 h1
-    inter(56px, dark, 600)
-    letter-spacing -0.04em
+    head(56px, dark, 600)
     margin-bottom 16px
 h2
-    inter(34px, main-mid, 600)
-    letter-spacing -0.04em
+    head(34px, main-mid, 600)
     margin-bottom 4px
 h3
-    inter(22px, dark, 600)
-    letter-spacing -0.04em
+    head(22px, dark, 600)
     margin-bottom 4px
 
 p, li
-    inter(14px, dark, 400)
-    letter-spacing -0.02em
+    text(14px, dark, 400)
     line-height 20px
     text-align justify
     margin-bottom 16px
 ul
     list-style-position inside
 a
-    color grad[7]
+    color ceri-blue
     font-weight 600
-    __hover__()
 b
     color dark
     font-weight 600
@@ -72,7 +67,6 @@ b
 
 .link
     text-align justify
-    __hover__()
 
 // Resume =====================================================================
 
@@ -102,7 +96,7 @@ b
         width 150px
         border-radius 8px
     &-sub
-        inter(22px, dark, 600)
+        text(22px, dark, 600)
         font-style italic
     &-left
         position relative

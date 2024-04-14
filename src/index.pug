@@ -5,17 +5,25 @@ block meta
     - const desc = "The official website of Spencer \"CERiNG\" Gunning- a multidisciplinary designer and programmer specializing in UI/UX, graphics, and game design."
 
 block content
-    h1.extend-small modfiles + itg
+    h1.intro hi there!
+    
+    +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "")
+        span i’m CERiNG, a #[span.soft-blurple multidisciplinary designer] in new jersey
+    
+    +showcase("left", "sunset", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "")
+        span developing #[span.soft-orange high quality interfaces], built just for your userbase
+    
+    +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "")
+        span crafting #[span.soft-purple playable experiences] for audiences on a global scale
+    
+    +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "", "")
+        span and designing #[span.soft-sky striking visuals] for a vast range of clients.
+
     .container
-        +thin("https://github.com/aemx/mod-releases/raw/main/packs/NJSRT1.zip", "01", "njsrt")
-        +thin("https://github.com/aemx/mod-releases/raw/main/packs/Misfits%20in%20the%20Prairie.zip", "02", "misfits in the prairie")
-        +thin("https://github.com/aemx/mod-releases/raw/main/packs/Aster's%20Astral%20Adventure.zip", "03", "aster's astral adventure")
-        p looking for something else? check out the full list of my #[a.external(href="https://github.com/aemx/mod-releases" target="_blank" rel="noopener") mod releases] and #[a.external(href="https://github.com/aemx/itg-releases" target="_blank" rel="noopener") itg releases].
-    h1.extend-small professional work
-    .container
-        +thin("./img/comms24.webp", "04", "commission information: multidisciplinary design on demand")
-        +thin("http://raritanlibrary.org/", "05", "web development at raritan public library")
-        +thin("https://arcaea.lowiro.com/", "06", "level design at lowiro limited")
-        +thin("https://cering.bandcamp.com/", "07", "musical works")
-    h1.extend-none contact me
-    p you can reach out to me through #[a.external(href="https://discordid.netlify.app/?id=210385938918932480" target="_blank" rel="noopener") discord], #[a.external(href="https://twitter.com/asteradd" target="_blank" rel="noopener") twitter], or via #[a(href="mailto:hello@cering.dev") email].
+        a.home-resume(href="mailto:hello@cering.dev")
+            p.c2a got an idea?
+            p.c2a-sub let's make something cool together.
+            .c2a-icon: include ./img/c2a.svg
+    .home-actions
+        a.action(href="/about") more about me
+        a.action(href="/resume") view my resume

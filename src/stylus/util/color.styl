@@ -1,6 +1,6 @@
 // standard ///////////////////////////////////////////////////////////////////
 
-main-lite   = #d08fff
+main-lite   = #b29ae8
 main-mid    = #6458b0
 main-dark   = #5d31d2
 lite-head   = #eceaed
@@ -12,13 +12,37 @@ dark        = #131115
 
 // gradients //////////////////////////////////////////////////////////////////
 
-gracer  = #b941d6, #9950ff
-grad    = #ff5050 #d87d3f #d8c93f #93ce3d #5eeeb2 #5ee1ee \
-          #5e98ee #3673c6 #695eee #b15eee #ee5ee2 #ff50a6
-mute    = #a05757 #8a644a #8a844a #6c8449 #5d997f #5d9399 \
-          #5d7599 #445d80 #615d99 #7f5d99 #995d93 #a0577a
+gracer = #b941d6, #9950ff
 
-// brands /////////////////////////////////////////////////////////////////////
+soft = {
+  red:        #ff5050
+  sunset:     #f25f4a
+  orange:     #d87d3f
+  yellow:     #d8c93f
+  green:      #93ce3d
+  teal:       #5eeeb2
+  cyan:       #53b6e3
+  sky:        #5e98ee
+  blue:       #3673c6
+  blurple:    #695eee
+  purple:     #b15eee
+  pink:       #d95ee6
+  magenta:    #ff50a6
+}
 
-brand       = grad[0], grad[1], grad[5], grad[6], grad[7], grad[8], grad[11]
-brand-mute  = mute[0], mute[1], mute[5], mute[6], mute[7], mute[8], mute[11]
+for key, value in soft
+  .soft-{key}
+    color value
+
+accent = {
+  red:        #ff1744
+  orange:     #ff6d00
+  yellow:     #ffc400
+  green:      #76ff03
+  teal:       #00e676
+  cyan:       #00e5ff
+  blue:       #304ffe
+  blurple:    #651fff
+  purple:     #e040fb
+  magenta:    #ff4081
+}

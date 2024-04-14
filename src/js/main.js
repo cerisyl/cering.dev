@@ -1,3 +1,4 @@
+import * as nav from './nav';
 import portfolio_gfx from 'url:../includes/portfolio/gfx.pug';
 import portfolio_web from 'url:../includes/portfolio/web.pug';
 import portfolio_games from 'url:../includes/portfolio/games.pug';
@@ -20,6 +21,10 @@ try {
 } catch(e) {
     page = '';
 }
+
+// Navigation
+nav.sticky();
+nav.handleTransition();
 
 // Content injection
 if (page.includes('portfolio')) {
