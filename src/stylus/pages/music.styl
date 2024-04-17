@@ -1,0 +1,72 @@
+.latest
+    display flex
+    flex-flow column nowrap
+    align-self center
+    gap 16px
+    width 950px
+    &-hsub
+        axis(22px, aster)
+    &-detail
+        display flex
+        flex-flow row nowrap
+        gap 32px
+    &-img
+        width 500px
+        height 500px
+    &-right
+        display flex
+        flex-flow column nowrap
+        justify-content space-between
+    &-title
+        margin-top -14px
+    &-date
+        margin-top -4px
+    &-genrelen
+        margin-top -4px
+        display flex
+        flex-flow row wrap
+        justify-content space-between
+    &-action
+        display flex
+        flex-flow row wrap
+        gap 24px
+    &-link
+        width 48px
+        transition fill 0.25s ease-in-out, transform 0.25s ease-out
+        for c, i in (1 2)
+            &:nth-child({i+1})
+                fill brand-mute[i+1]
+                &:hover
+                    transform scale(1.1)
+                    fill brand[c]
+
+.release
+    display flex
+    flex-flow row wrap
+    gap 48px 150px
+    &-detail
+        display flex
+        flex-flow column nowrap
+        gap 4px
+        width 324px
+    &-date
+        margin-top -4px
+    &-genrelen
+        margin-top -4px
+        display flex
+        flex-flow row wrap
+        justify-content space-between
+    &-action
+        display flex
+        flex-flow row wrap
+        gap 16px
+        margin-top 8px
+    &-link
+        width 32px
+        transition fill 0.25s ease-in-out, transform 0.25s ease-out
+        for c, i in (1 2)
+            &:nth-child({i+1})
+                fill brand-mute[i+1]
+                &:hover
+                    transform scale(1.1)
+                    fill brand[c]

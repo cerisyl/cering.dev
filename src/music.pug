@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        - const title = "music"
+        - const desc = ""
+        include ./includes/_head.pug
+    body.body
+        include ./includes/header.pug
+        main.main
+            h1.h1.center music
+            .latest
+                p.latest-hsub latest release
+                .latest-detail
+                    img.latest-img(src="./img/music/vaarisian.png?as=webp")
+                    .latest-right
+                        .latest-top
+                            h2.h2.latest-title Vaarisian tale #[span.text (2021)]
+                            div.latest-genrelen
+                                p.text folk, single
+                                p.text 3'
+                        .latest-mid
+                            p.text “a modern, fantastical take on traditional celtic music. the main melody was originally pieced together from something i had heard in a dream earlier in the year.”
+                            p.text.right -#[b.bold CERiNG]
+                        .latest-bot
+                            b.bold stream / download
+                            .latest-action
+                                a.latest-link(href="https://soundcloud.com/cerhythm/vaarisian-tale" target="_blank" rel="noopener" title="SoundCloud" aria-label="Listen on SoundCloud")
+                                    include ./img/icons/soundcloud.svg
+                                a.latest-link(href="https://cering.bandcamp.com/track/vaarisian-tale" target="_blank" rel="noopener" title="Bandcamp" aria-label="Listen on Bandcamp")
+                                    include ./img/icons/bandcamp.svg
+            h2.h2 discography
+            .release
+                +music("NO REWARD", 2021, "neurofunk", 3, "reward", "no-reward", "track/no-reward")
+                +music("Scapes", 2021, "various", 16, "scapes", "sets/scapes", "album/scapes")
+                +music("Cyrestine Wastes", 2020, "downtempo electronic", 2, "wastes", "cyrestine-wastes", "track/cyrestine-wastes")
+                +music("frailer", 2020, "chillout electronic", 5, "frailer", "frailer", "track/frailer")
+                +music("liar▽tears", 2020, "neurofunk", 3, "liartears", "liartears", "track/liar-tears")
+                +music("Cyrestine Mirror", 2019, "schranz / psytrance", 3, "mirror", "cyrestine", "track/cyrestine-mirror")
+            h2.h2 compilation albums
+            .release
+                +music("℞", 2020, "various", 20, "rx", "", "album/rx")
+        include ./includes/footer.pug

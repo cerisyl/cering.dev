@@ -1,0 +1,112 @@
+.card
+    user-select none
+    height 322px
+    flex 2
+    min-width 650px
+    axis(22px, lite)
+    display flex
+    flex-flow column nowrap
+    padding 24px 28px
+    justify-content space-between
+    position relative
+    __hover__()
+    &-blue
+        gradient-bg("left, grad[8] 0%, grad[7] 100%")
+    &-orange
+        gradient-bg("left, grad[1] 0%, grad[0] 100%")
+    &-pink
+        gradient-bg("left, grad[9] 0%, grad[10] 100%")
+    &-title
+        z-index 1
+        width 180px
+    &-desc
+        z-index 1
+        width 180px
+    &-img
+        position absolute
+        height 100%
+        margin -24px auto
+        right 0
+    &-bg
+        position absolute
+        width 100%
+        height 100%
+        margin -24px -28px
+        background url('../img/texture_alt.png?as=webp') right bottom
+        background-size 24px
+.mini
+    user-select none
+    display flex
+    flex-flow column nowrap
+    padding 24px 28px
+    justify-content space-between
+    align-items stretch
+    width 392px
+    height 322px
+    axis(22px, lite)
+    position relative
+    __hover__()
+    &-green
+        @extend .mini
+        gradient-bg("top, grad[3] 0%, grad[2] 150%")
+    &-red
+        @extend .mini
+        gradient-bg("top, grad[11] 0%, grad[0] 150%")
+    &-purple
+        @extend .mini
+        gradient-bg("top, grad[8] 0%, grad[9] 150%")
+    &-title
+        z-index 1
+    &-img
+        position absolute
+        width 100%
+        height 100%
+        margin -24px auto
+        left 0
+        right 0
+        object-fit cover
+    &-bg
+        position absolute
+        width 100%
+        height 100%
+        margin -24px -28px
+        background url('../img/texture_alt.png?as=webp') center center
+        background-size 24px
+.micro
+    user-select none
+    display flex
+    flex-flow column nowrap
+    padding 24px 28px
+    justify-content space-between
+    width 588px
+    height 161px
+    position relative
+    __hover__()
+    &-indigo
+        @extend .micro
+        gradient-bg("top, grad[9] 0%, grad[8] 220%")
+    &-title
+        axis(22px, lite)
+        z-index 1
+    &-desc
+        inter(38px, lite, 700)
+        text-decoration underline
+        text-decoration-thickness 2px
+        text-underline-offset 1px
+        align-self flex-end
+        z-index 1
+    &-img
+        position absolute
+        width 100%
+        height 100%
+        margin -24px auto
+        left 0
+        right 0
+        object-fit cover
+    &-bg
+        position absolute
+        width 100%
+        height 100%
+        margin -24px -28px
+        background url('../img/texture_alt.png?as=webp') center bottom
+        background-size 24px
