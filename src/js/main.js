@@ -63,7 +63,7 @@ if (page.includes('resume') || page.includes('$')) {
             } else {
                 req(resume_default).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20240417-default">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20240417-default.pdf">download as pdf</a>
                 `
             }
         });
