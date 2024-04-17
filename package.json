@@ -15,7 +15,7 @@
   },
   "scripts": {
     "clear": "rm -rf dist && rm -rf .parcel-cache",
-    "copy": "cp -R src/docs dist/docs",
+    "copy": "mkdir dist && cp -R src/docs dist/docs",
     "dev": "parcel src/*.pug",
     "redev": "npm run clear && mkdir dist && npm run copy && npm run dev",
     "build": "npm run clear && npm run copy && parcel build src/*.pug",
