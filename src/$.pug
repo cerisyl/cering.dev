@@ -3,6 +3,7 @@ html(lang="en")
     head
         meta(name="robots", content="noindex, nofollow")
         link(rel="stylesheet", href="./stylus/alt.styl")
+        script(type="module" src="./js/main.js")
     body
         main
             .resume-top
@@ -11,5 +12,4 @@ html(lang="en")
                     p.resume-sub multidisciplinary design · programming · computers
                     .resume-top-links#resume-links
                 img.resume-me(src="./img/me.png")
-            .resume
-                include ./includes/resume/lowiro.pug
+            .resume#resume

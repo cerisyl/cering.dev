@@ -25,6 +25,8 @@ main
     padding 8px 24px
     min-height calc(100dvh - 93px - 16px - 149px)
     overflow-x clip
+    +standard()
+        overflow-x visible
 h1
     head(64px, lite-head, 600)
     margin-bottom 16px
@@ -155,7 +157,8 @@ hr
         animation awes 2s infinite
 
 .sig
-    margin 4px 0 0 auto
+    margin-top 4px
+    text-align right
     svg
         width 225px
 
