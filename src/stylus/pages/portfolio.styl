@@ -1,20 +1,33 @@
 .portfolio
   // landing
   &-main
-    flex(row, wrap, left, gap: 8px)
+    flex(row, wrap, center, gap: 8px)
     &-outer
       position relative
       width calc(50% - 4px)
+      +tablet()
+        width calc(25% - 6px)
     &-text
       flex(row, wrap, left, end)
       width 100%
       height 100%
-      padding 8px
+      padding 12px 8px
       position absolute
       head(8vw, lite-head, 600)
       z-index 1
       user-select none
       pointer-events none
+      span
+        text-shadow: 0px 0px 4px #000
+        line-height 8.2vw
+      +tablet()
+        font-size 5vw
+        span
+          line-height 5.2vw
+      +standard()
+        font-size 44px
+        span
+          line-height 44px
     &-inner
       height 100%
       hover-highlight-intense()
@@ -36,13 +49,17 @@
     svg, source, img
       width 32px
   &-actions
-    flex(row, wrap, left, gap: 8px)
+    flex(row, wrap, left, gap: 16px)
     margin-bottom 16px
   &-outer
     flex(column, nowrap)
-    margin-bottom 16px
+    margin-bottom 32px
+    +laptop()
+      flex(row, nowrap, center, start, gap: 16px)
   &-embed
     width 100%
+    +laptop()
+      min-width 55%
     source, img
       width 100%
       border-radius 4px

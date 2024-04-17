@@ -8,7 +8,7 @@ block content
     h1.intro hi there!
 
     mixin showcase(dir, color, image, title, role, alt, link)
-        .showcase-container
+        div(class=`showcase-${dir}-container`)
             p(class=`showcase-${dir}-desc`)
                 block
             div(class=`showcase-${dir} showcase-${color}`)

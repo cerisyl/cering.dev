@@ -19,7 +19,7 @@ underline(col=lite, h=1px, b=1px, w=100%)
     width 0%
     height h
     bottom b
-    left 0
+    left "calc((100% - %s) / 2)" % w
     background-color col
     visibility hidden
     animate(all, 0.2s)
@@ -27,7 +27,7 @@ underline(col=lite, h=1px, b=1px, w=100%)
     &::before
       visibility visible
       width w
-      left 0
+      left "calc((100% - %s) / 2)" % w
       right 50%
 
 // Hovers
@@ -59,4 +59,8 @@ tablet()
 
 laptop()
   @media screen and (min-width 768px)
+    {block}
+
+standard()
+  @media screen and (min-width 928px)
     {block}

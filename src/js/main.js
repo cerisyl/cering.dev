@@ -47,7 +47,10 @@ if (page.includes('resume')) {
 } else if (page.includes("graphics")) {
     const macyInstance = Macy({
         container: "#gallery",
-        columns: 2,
+        columns: 3,
         margin: 8,
+        breakAt: {
+            500: 2
+        }
     });
 }

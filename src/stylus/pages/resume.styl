@@ -1,10 +1,16 @@
 .resume
   flex(column-reverse, nowrap)
   margin-top 32px
+  +laptop()  
+    flex(row, nowrap, gap: 24px)
   &-top
     flex(column-reverse, nowrap, center, center, 8px)
+    +tablet()
+      flex(row-reverse, nowrap, center, center, 12px)
+    +laptop()
+      gap: 24px
     &-links
-      flex(row, nowrap, center, gap: 8px)
+      flex(row, nowrap, left, gap: 8px)
   &-me
     width 150px
     border-radius 8px
@@ -12,29 +18,59 @@
     text(6.47vw, lite-head, 600)
     text-align center
     margin-bottom 0px !important
+    +tablet()
+      font-size 4.3vw
+      text-align left
+    +standard()
+      font-size 44px
   &-sub
-    text(3.5vw, lite, 600)
+    text(3.4vw, lite, 600)
     font-style italic
+    +tablet()
+      font-size 2.2vw
+      text-align left
+    +standard()
+      font-size 20px
   &-left
     position relative
+    +laptop()
+      flex(column, nowrap, stretch, stretch)
+      text-align right
+      min-width calc(144px + 32px)
+      max-width calc(144px + 32px)
     &-group
       flex(row, wrap, start, start, gap: 8px)
       margin-bottom 16px
     &-container
-      background-color dark-mid
-      outline 1px solid main-mid
-      padding 8px
-      border-radius 4px
       min-width calc(50% - 8px)
       max-width calc(50% - 8px)
+      +laptop()
+        background-color dark-mid
+        outline 1px solid main-mid
+        padding 8px
+        border-radius 4px
+        min-width 100%
+        max-width 100%
+        margin-bottom 8px
       p
         text-align left !important
         line-height 16px
         margin-bottom 0
+        +laptop()
+          text-align right !important
   &-right
+    +standard()
+      border-left 2px solid main-mid
+      padding-left 32px
     &-date
       text-align left
       margin-bottom -4px
+      +tablet()
+        margin-top 6px
+        text-align left
+        line-height 10px !important
+        min-width 80px
+        max-width 80px
     &-container
       flex(column, nowrap)
       margin-bottom 16px
@@ -43,6 +79,8 @@
       outline 1px solid main-mid
       padding 12px 16px
       border-radius 4px
+      +tablet()
+        flex(row, nowrap, left, gap: 8px)
       &-inner
         p, li
           line-height 16px
@@ -51,6 +89,12 @@
     h3
       text-align center
       margin-bottom 0px
+      +laptop()
+        text-align right
     p
       text-align center
       line-height 16px
+      +laptop()
+        text-align right
+    +laptop()
+      margin-top auto

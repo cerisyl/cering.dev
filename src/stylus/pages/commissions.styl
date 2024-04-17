@@ -1,6 +1,9 @@
 .comms
   flex(column, nowrap)
-  margin-bottom 16px
+  margin-bottom 32px
+  +laptop()
+    flex(row, nowrap)
   &-item
+    user-select none
     source, img
       width 100%

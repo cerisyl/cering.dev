@@ -8,20 +8,35 @@
   margin-bottom 4px
   overflow hidden
   hover-highlight()
+  +tablet()
+    min-width 46vw
+  +laptop()
+    min-width 56vw
+  +standard()
+    min-width 60%
   &-container
     flex(column, nowrap)
     margin-bottom 64px
     position relative
+    +tablet()
+      line-height 0
+      margin-bottom 88px
   &-desc
     head(30px, lite-head, 600)
     line-height 30px
-    svg
-      width 112px
-      margin-right -6px
-      path
-        fill lite-head
+    +tablet()
+      head(5vw, lite-head, 600)
+      line-height 5vw
+      margin-bottom 0
+    +standard()
+      head(44px, lite-head, 600)
+      line-height 44px
   &-detail
     display inline
+    +tablet()
+      position absolute
+      right 0
+      bottom -48px
   &-title
     axis(26px, lite-head)
     margin-bottom -4px
@@ -31,51 +46,88 @@
   &-inner
     line-height 0
   &-image
+    user-select none
     source, img
       width calc(120vw - 48px)
       height 100%
       position relative
+      +tablet()
+        width 100%
   &-shape
     position absolute
     z-index -1
     width 90vw
+    +tablet()
+      width 340px
+    +laptop()
+      width 400px
+
   // positions
   &-left
     @extends .showcase
     left calc(-24px)
     border-radius 0 4px 4px 0
+    +standard()
+      border-radius 4px
+    &-container
+      @extends .showcase-container
+      +tablet()
+        flex(row-reverse, nowrap, x-align: center)
     &-desc
       @extends .showcase-desc
       text-align right
     &-shape
       @extends .showcase-shape
       left -40vw
+      +tablet()
+        left -220px
+      +standard()
+        left -30px
     &-detail
       @extends .showcase-detail
       p
         text-align left
         margin-left -12px
+      +tablet()
+        left 8px
     .showcase-title, .showcase-role
       text-align right
   &-right
     @extends .showcase
     right calc(-20vw + 48px)
     border-radius 4px 0 0 4px
+    +tablet()
+      right -24px
+    +standard()
+      border-radius 4px
     source, img
       right calc(20vw)
+      +tablet()
+        right 0
+    &-container
+      @extends .showcase-container
+      +tablet()
+        flex(row, nowrap, x-align: center)
     &-desc
       @extends .showcase-desc
       text-align left
     &-shape
       @extends .showcase-shape
       right -40vw
+      +tablet()
+        right -220px
+      +standard()
+        right -30px
     &-detail
       @extends .showcase-detail
       p
         text-align right
         margin-right -12px
+      +tablet()
+        right 8px
     .showcase-title, .showcase-role
       text-align left
+
   // colors
   &-blue
     background linear-gradient(0deg, soft.blue 0%, soft.blurple 100%)

@@ -1,16 +1,29 @@
 .c2a
+  flex(column, nowrap, gap: 16px)
+  +tablet()
+    flex(row, nowrap, space-around, gap: 16px)
+  +laptop()
+    flex(column, nowrap, center, center, gap: 16px)
   &-main
     head(36px, lite-head, 600)
     margin-bottom 0
+    +laptop()
+      font-size 42px
   &-sub
     text(16px, lite-head, 600)
     margin-bottom 0
+    +laptop()
+      font-size 20px
   &-icon
     position absolute
     width 96px
     fill lite-head
     top -3px
     right -3px
+    +laptop()
+      width 144px
+      top -14px
+      right -14px
   &-resume
     flex(column, nowrap, flex-end)
     background linear-gradient(0deg, main-dark 0%, cering-purple 200%)
@@ -20,8 +33,23 @@
     padding 16px
     position relative
     hover-highlight()
+    +tablet()
+      width 320px
+    +laptop()
+      width 475px
+      height 192px
   &-actions
     flex(row, nowrap, space-between)
+    +tablet()
+      flex(column, nowrap, space-around, gap: 16px)
+    +laptop()
+      flex(row, nowrap, space-around)
+      width 525px
     .action
       flex(x-align: center)
       margin-right 0
+      +tablet()
+        height 30%
+        padding 4px 20px
+      +laptop()
+        height 36px

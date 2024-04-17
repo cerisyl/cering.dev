@@ -6,6 +6,9 @@
   outline 0px solid cering-purple
   &-outline
     outline 4px solid cering-purple
+    +laptop()
+      transition none
+      outline 0px solid cering-purple
 
 .logo
   display inline-block
@@ -33,10 +36,22 @@
   z-index -1
   width 100%
   animate(top)
+  +laptop()
+    flex(row, nowrap, space-around, center)
+    position static
+    background-color transparent
+    backdrop-filter none
+    z-index 0
+    margin-left 40px
   &-link
     head(20px, lite-head, 600)
-    padding calc(-12px + (100dvh - 94px) / 8 / 2) 24px
+    padding calc(-12px + (100dvh - 94px) / 7 / 2) 24px
     hover-color( rgba(dark-lite, 0.2) )
+    +laptop()
+      font-size 18px
+      padding 10px 8px
+      hover-color(transparent)
+      underline(cering-purple, 2px, 9px, calc(100% - 16px))
   &-dropdown
     display none
   &-active
@@ -51,6 +66,8 @@
       width 40px
       margin-bottom -6px
       stroke lite
+    +laptop()
+      display none
 
 .enlarge
   margin -8px -15px -8px -8px

@@ -18,18 +18,21 @@ html
     scroll-behavior smooth
 body
     background-color dark
-    //max-width 928px
+    max-width 928px
+    margin 0 auto
 main
     margin 0 auto
     padding 8px 24px
     min-height calc(100dvh - 93px - 16px - 149px)
-    overflow-x hidden
+    overflow-x clip
 h1
     head(64px, lite-head, 600)
     margin-bottom 16px
 .h1-small
     head(12.8vw, lite-head, 600)
     margin-bottom 16px
+    +tablet()
+        head(64px, lite-head, 600)
 h2
     head(42px, lite-head, 600)
     margin-bottom 12px
@@ -89,6 +92,8 @@ hr
     padding 4px 12px
     background-color main-dark
     hover-color(soft.blurple)
+    +laptop()
+        font-size 16px
 
 .center
     text-align center
@@ -124,7 +129,7 @@ hr
         margin-bottom 0
 
 .container
-    margin-bottom 16px  
+    margin-bottom 32px  
 
 .crunch
     line-height 10px !important
@@ -150,11 +155,14 @@ hr
         animation awes 2s infinite
 
 .sig
-    width 225px
     margin 4px 0 0 auto
+    svg
+        width 225px
 
 .freeze
     overflow-y hidden
+    +laptop()
+        overflow-y auto
 
 .lowered
     position relative
