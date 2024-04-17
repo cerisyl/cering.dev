@@ -18,7 +18,7 @@
     "copy": "cp -R src/docs dist/docs",
     "dev": "parcel src/*.pug",
     "redev": "npm run clear && mkdir dist && npm run copy && npm run dev",
-    "build": "npm run clear && parcel build src/*.pug",
+    "build": "npm run clear && npm run copy && parcel build src/*.pug",
     "deploy": "npm run build && bash ./scripts/deploy.sh"
   }
 }
