@@ -1,0 +1,42 @@
+.tooltip
+  border-bottom 1px dotted lite
+  position relative
+  cursor help
+  &-text
+    flex(column, nowrap, x-align: center)
+    text(12px, dark, bold)
+    opacity 0
+    width 156px
+    background-color lite
+    text-align center
+    border-radius 4px
+    padding 4px 6px
+    position absolute
+    z-index 3
+    bottom 24px
+    left 50%
+    margin-left calc(-156px / 2)
+    animate(opacity)
+    box-shadow 0 0 5px 1px black
+    &::after
+      content ""
+      position absolute
+      top 100%
+      left 50%
+      margin-left -5px
+      border-width 5px
+      border-style solid
+      border-color lite transparent transparent transparent
+  &:hover .tooltip-text,
+  &:active .tooltip-text
+    opacity 1
+  &-svg
+    @extends .tooltip
+    border-bottom none
+    &-text
+      width 72px
+      margin-left calc(-72px / 2)
+      bottom 42px
+    &:hover .tooltip-svg-text,
+    &:active .tooltip-svg-text
+      opacity 1

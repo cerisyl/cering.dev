@@ -15,24 +15,10 @@ meta(name="format-detection" content="address=no")
 meta(name="format-detection" content="email=no")
 //meta(name="og:image", content="https://i.imgur.com/7QYOJPx.png")
 // ./img/main.png
-meta(name="og:image:alt", content="The logo of CERiNG.")
+meta(name="og:image:alt", content="CERiNG")
 meta(name="og:locale", content="en_US")
 meta(name="og:type" content="website")
 //meta(name="twitter:image", content="./img/main-twit.png")
 link#fav-light(rel="icon" href="./img/favicon.svg" type="image/svg+xml")
 link(rel="stylesheet", href="./stylus/main.styl")
 script(type="module" src="./js/main.js")
-//- Mixins ////////////////////////////////////////////////////////////////////
-mixin showcase(dir, color, image, title, role, alt, link)
-    .showcase-container
-        p(class=`showcase-${dir}-desc`)
-            block
-        div(class=`showcase-${dir} showcase-${color}`)
-            a.showcase-inner(href=link target="_blank" rel="noopener")
-                picture(class=`showcase-${dir}-image`)
-                    source(srcset=`./img/home/${image}.png?as=webp` alt=alt type="image/webp")
-                    img(src=`./img/home/${image}.png` type="image/png")
-        div(class=`showcase-${dir}-detail`)
-            p.showcase-title #{title}
-            p.showcase-role(class=`soft-${color}`) #{role}
-        div(class=`showcase-${dir}-shape`): include ../img/shape.svg

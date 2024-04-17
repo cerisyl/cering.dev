@@ -2,10 +2,15 @@
 @require './util/fonts'
 @require './util/mixins'
 @require './util/reset'
+@require './components/c2a'
 @require './components/footer'
 @require './components/header'
 @require './components/scrollbar'
+@require './components/tooltip'
+@require './pages/commissions'
+@require './pages/gallery'
 @require './pages/home'
+@require './pages/itg'
 @require './pages/portfolio'
 @require './pages/resume'
 
@@ -22,11 +27,14 @@ main
 h1
     head(64px, lite-head, 600)
     margin-bottom 16px
+.h1-small
+    head(12.8vw, lite-head, 600)
+    margin-bottom 16px
 h2
-    head(48px, lite-head, 600)
+    head(42px, lite-head, 600)
     margin-bottom 12px
 h3
-    head(22px, lite-head, 600)
+    head(28px, lite-head, 600)
     margin-bottom 4px
 .hsub
     axis(22px, lite)
@@ -38,10 +46,13 @@ p, li
 ul
     list-style-position inside
 a
-    text(16px, soft.blue, 600)
+    color soft.sky
+    font-weight 600
 b
     color lite-head
     font-weight 600
+i
+    font-style italic
 hr
     background-color dark-lite
     border 0
@@ -53,7 +64,8 @@ hr
     color lite-dark
     &-small
         @extends .comment
-        font-size 12px
+        font-size 14px
+        line-height 16px
 
 .no-bold
     font-weight 400
@@ -74,8 +86,7 @@ hr
     text-align center
     text(14px, lite, 600,, -0.02em)
     border-radius 4px
-    padding 4px 8px
-    margin-right 4px
+    padding 4px 12px
     background-color main-dark
     hover-color(soft.blurple)
 
@@ -95,12 +106,16 @@ hr
     margin-right 4px
     background-color main-dark
 
+.link
+    underline(soft.sky)
+
 .external::after
-    content " 🡥"
+    content "🡥"
     position relative
     font-size 0.6em
     top -1px
     letter-spacing 0px
+    margin-left 3px
 
 .extend
     &-small
@@ -115,6 +130,11 @@ hr
     line-height 10px !important
     margin-bottom 2px !important
 
+.thin
+    width 100%
+    max-width 820px
+    border-radius 4px
+
 @keyframes awes
     0%
         filter hue-rotate(0deg)
@@ -123,43 +143,25 @@ hr
     100%
         filter hue-rotate(0deg)
 
-.thin
-    width 100%
-    max-width 820px
-    border-radius 4px
-
 .link
     text-align justify
-    &-red
-        @extend .link
-        text(14px, ceri-red, 600,, -0.02em)
-    &-yellow
-        @extend .link
-        text(14px, ceri-yellow, 600,, -0.02em)
-    &-blue
-        @extend .link
-        text(14px, ceri-blue, 600,, -0.02em)
-    &-purple
-        @extend .link
-        text(14px, ceri-purple, 600,, -0.02em)
-    &-grey
-        @extend .link
-        text(14px, lite-dark, 600,, -0.02em)
     &-epic
-        @extend .link-blue
+        @extend .link
         animation awes 2s infinite
 
 .sig
     width 225px
-    fill alt()
     margin 4px 0 0 auto
 
 .freeze
-  overflow-y hidden
+    overflow-y hidden
 
 .lowered
-  position relative
-  z-index -2
+    position relative
+    z-index -2
 
 .no-zindex
-  z-index 1
+    z-index 1
+
+.column
+    flex(column, nowrap, gap: 16px)

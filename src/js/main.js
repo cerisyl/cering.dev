@@ -1,10 +1,7 @@
 import * as nav from './nav';
-import portfolio_gfx from 'url:../includes/portfolio/gfx.pug';
-import portfolio_web from 'url:../includes/portfolio/web.pug';
-import portfolio_games from 'url:../includes/portfolio/games.pug';
-import portfolio_music from 'url:../includes/portfolio/music.pug';
 import resume_default from 'url:../includes/resume/default.pug';
 import resume_lowiro from 'url:../includes/resume/lowiro.pug';
+import Macy from "macy"
 
 // Generate a request and response using a url and handling function
 const req = async (url) => {
@@ -27,25 +24,7 @@ nav.sticky();
 nav.handleTransition();
 
 // Content injection
-if (page.includes('portfolio')) {
-    ['hashchange', 'load'].forEach(el => {
-        window.addEventListener(el, () => {
-            const hash = window.location.hash.slice(1);
-            const target = document.getElementById('portfolio');
-            if (hash === 'gfx') {
-                req(portfolio_gfx).then(html => target.innerHTML = html);
-            } else if (hash === 'web') {
-                req(portfolio_web).then(html => target.innerHTML = html);
-            } else if (hash === 'games') {
-                req(portfolio_games).then(html => target.innerHTML = html);
-            } else if (hash === 'music') {
-                req(portfolio_music).then(html => target.innerHTML = html);
-            } else {
-                req(portfolio_games).then(html => target.innerHTML = html);
-            }
-        });
-    })
-} else if (page.includes('resume')) {
+if (page.includes('resume')) {
     ['hashchange', 'load'].forEach(el => {
         window.addEventListener(el, () => {
             const hash = window.location.hash.slice(1);
@@ -65,4 +44,10 @@ if (page.includes('portfolio')) {
             }
         });
     })
+} else if (page.includes("graphics")) {
+    const macyInstance = Macy({
+        container: "#gallery",
+        columns: 2,
+        margin: 8,
+    });
 }

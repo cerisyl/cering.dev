@@ -1,0 +1,54 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "graphics"
+    - const desc = "A collection of graphic design work by Spencer \"CERiNG\" Gunning."
+
+block content
+    h1 graphics
+    -
+        const gallery = [
+            {src: "future-esoterica", title: "Future Esoterica", year: "2023", desc: "jacket art"},
+            {src: "breathe-in", title: "Breathe In", year: "2023", desc: "game graphic"},
+            {src: "whiteout", title: "Whiteout", year: "2023", desc: "game graphic"},
+            {src: "0x1311", title: "0x1311", year: "2023", desc: "game graphic"},
+            {src: "particle-arts", title: "Particle Arts (Satori Akatsuki Remix)", year: "2022", desc: "commission, jacket art"},
+            {src: "miracorp", title: "MiraCorp International", year: "2022", desc: "brand design"},
+            {src: "dangerous", title: "DANGEROOOOUS JUNGLE", year: "2023", desc: "commission, game graphic"},
+            {src: "farewell", title: "Farewell to Reality", year: "2023", desc: "game graphic"},
+            {src: "record-i", title: "Record I", year: "2022", desc: "digital artwork"},
+            {src: "chella", title: "CHELLA RIDE", year: "2023", desc: "game graphic"},
+            {src: "enigma-ii", title: "Enigma II", year: "2023", desc: "commission, game graphic"},
+            {src: "cancer-towers", title: "Cancer Towers on Holy Road Hi-Way", year: "2022", desc: "digital artwork"},
+            {src: "created-world", title: "created world", year: "2022", desc: "digital artwork"},
+            {src: "itf", title: "In temporarily forever...", year: "2022", desc: "digital artwork"},
+            {src: "maractus", title: "Maractus Package", year: "2023", desc: "commission, game graphic"},
+            {src: "anything", title: "Anything Goes", year: "2023", desc: "commission, poster"},
+            {src: "anything-web", title: "Anything Goes", year: "2023", desc: "commission, web graphic"},
+            {src: "frost-valley", title: "Live from Frost Valley", year: "2022", desc: "jacket art"},
+            {src: "awake", title: "Awake", year: "2023", desc: "game graphic"},
+            {src: "prm", title: "P.R.M", year: "2023", desc: "game graphic"},
+            {src: "eva", title: "The Evangelion Symphony", year: "2022", desc: "jacket art"},
+            {src: "keo", title: "KILL EACH OTHER", year: "2024", desc: "game graphic"},
+            {src: "railgun", title: "Railgun Roulette", year: "2022", desc: "game graphic"},
+            {src: "lux", title: "LUX MORTIS", year: "2022", desc: "game graphic"},
+            {src: "synchro", title: "Synchronization", year: "2022", desc: "game graphic"},
+            {src: "iphaeneheme", title: "iphaeneheme", year: "2022", desc: "digital artwork"},
+        ]
+    .gallery#gallery
+        for image in gallery
+            .gallery-object
+                a.gallery-inner(href=`./media/graphics/${image.src}.png` target="_blank" rel="noopener")
+                    picture.gallery-image
+                        source(srcset=`./img/graphics/${image.src}.png?as=webp` alt=image.title type="image/webp")
+                        img(src=`./img/graphics/${image.src}.png?as=jpeg` type="image/jpeg")
+                .gallery-info
+                    span.gallery-title #[b #[i #{image.title}]] (#{image.year})
+                    span.gallery-desc #{image.desc}
+
+    - 
+        const c2aLinks = [
+            {href: "commissions",   desc: "commission info"},
+            {href: "portfolio",     desc: "more from my portfolio"}
+        ]
+    include ./includes/c2a.pug

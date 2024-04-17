@@ -65,11 +65,13 @@ export const handleTransition = () => {
         const links = document.getElementById("links");
         const body = document.querySelector("body");
         const main = document.querySelector("main");
+        const footer = document.querySelector("footer");
         if (links.classList.contains("nav-active")) {
             links.classList.add("no-zindex")
         } else {
             body.classList.remove("lowered");
             main.classList.remove("lowered");
+            footer.classList.remove("lowered");
         }
     });
     // Z-index removal, .lowered addition
@@ -77,11 +79,13 @@ export const handleTransition = () => {
         const links = document.getElementById("links");
         const body = document.querySelector("body");
         const main = document.querySelector("main");
+        const footer = document.querySelector("footer");
         if (!links.classList.contains("nav-active")) {
             links.classList.remove("no-zindex");
         } else {
             body.classList.add("lowered");
             main.classList.add("lowered");
+            footer.classList.add("lowered");
         }
     });
 }

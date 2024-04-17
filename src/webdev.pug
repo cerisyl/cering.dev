@@ -1,0 +1,103 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "webdev"
+    - const desc = "The official web development portfolio of Spencer \"CERiNG\" Gunning."
+
+block content
+    h1 webdev
+
+    h2 Raritan Public Library
+    .portfolio-lang
+        .tooltip-svg
+            include ./img/langs/js.svg
+            span.tooltip-svg-text JavaScript
+        .tooltip-svg
+            include ./img/langs/stylus.svg
+            span.tooltip-svg-text Stylus
+        .tooltip-svg
+            include ./img/langs/pug.svg
+            span.tooltip-svg-text Pug
+        .tooltip-svg
+            picture
+                source(srcset=`./img/langs/parcel.png?as=webp` alt="Parcel logo" type="image/webp")
+                img(src=`./img/langs/parcel.png` type="image/png")
+            span.tooltip-svg-text Parcel
+        .tooltip-svg
+            include ./img/langs/bash.svg
+            span.tooltip-svg-text GNU Bash
+        .tooltip-svg
+            include ./img/langs/apache.svg
+            span.tooltip-svg-text Apache
+    .portfolio-actions
+        a.action.external(href="https://raritanlibrary.org/" target="_blank" rel="noopener") raritanlibrary.org
+        a.action.external(href="https://github.com/raritanlibrary/www" target="_blank" rel="noopener") view source on GitHub
+    .portfolio-outer
+        picture.portfolio-embed
+            source(srcset=`./img/webdev/rpl.png?as=webp` alt="The homepage of Raritan Public Library" type="image/webp")
+            img(src=`./img/webdev/rpl.png?as=jpeg` type="image/jpeg")
+        .portfolio-inner
+            h3 about
+            p In addition to my duties as #[a(href="resume") IT Specialist], I was tasked with redesigning the Library's website following a 12-year period without a significant update. The old website, a Web 1.0-era design running off of fragments of poorly-maintained HTML and CSS, was completely overhauled using a frontend stack of #[b Parcel], #[b Pug], #[b Stylus], and #[b vanilla JavaScript]. I opted to use vanilla JS rather than React or Svelte since the Library's userbase viewed the site on older, slower devices. 
+            p Using Google's open-source #[b Lighthouse] toolkit, I continuously audited the website to ensure new content was being loaded without issue. I also created a suite of #[b Bash] scripts to push updates to the Library's webserver, pre-generate less frequently updated dynamic content using an API, and tabulate monthly statistics based on #[b Apache] access logs.
+
+    h2 Cardigan
+    .portfolio-lang
+        .tooltip-svg
+            include ./img/langs/react.svg
+            span.tooltip-svg-text React
+        .tooltip-svg
+            include ./img/langs/ts.svg
+            span.tooltip-svg-text TypeScript
+        .tooltip-svg
+            include ./img/langs/sass.svg
+            span.tooltip-svg-text Sass
+        .tooltip-svg
+            include ./img/langs/vite.svg
+            span.tooltip-svg-text Vite
+        .tooltip-svg
+            include ./img/langs/python.svg
+            span.tooltip-svg-text Python
+    .portfolio-actions
+        a.action.external(href="https://soraeee.github.io/cardigan/" target="_blank" rel="noopener") soraeee.github.io/cardigan
+        a.action.external(href="https://github.com/soraeee/cardigan" target="_blank" rel="noopener") view source on GitHub
+    .portfolio-outer
+        picture.portfolio-embed
+            source(srcset=`./img/webdev/cardigan.png?as=webp` alt="The Cardigan app" type="image/webp")
+            img(src=`./img/webdev/cardigan.png?as=jpeg` type="image/jpeg")
+        .portfolio-inner
+            h3 about
+            p #[b Cardigan] is an actively maintained, collaborative volunteer project built for use in StepMania tournaments at the #[a.link.external(href="https://illinois.edu/" target="_blank" rel="noopener") University of Illinois Urbana-Champaign]. The app uses a card draw system written in #[b React] and #[b TypeScript], and has been used to run tournaments with #[b over 100 participants since 2023]. My specific contributions include UI and UX design and functionality, styling using Sass, and full mobile support.
+
+    h2 WaffleKani
+    .portfolio-lang
+        .tooltip-svg
+            include ./img/langs/svelte.svg
+            span.tooltip-svg-text SvelteKit
+        .tooltip-svg
+            include ./img/langs/ts.svg
+            span.tooltip-svg-text TypeScript
+        .tooltip-svg
+            include ./img/langs/stylus.svg
+            span.tooltip-svg-text Stylus
+        .tooltip-svg
+            include ./img/langs/vite.svg
+            span.tooltip-svg-text Vite
+        .tooltip-svg
+            include ./img/langs/nodejs.svg
+            span.tooltip-svg-text NodeJS
+    p #[i.comment-small WaffleKani is a privately maintained project. Please #[a.link(href="mailto:hello@cering.dev") contact me] to request a copy of source.]
+    .portfolio-outer
+        picture.portfolio-embed
+            source(srcset=`./img/webdev/wk.png?as=webp` alt="The WaffleKani app" type="image/webp")
+            img(src=`./img/webdev/wk.png?as=jpeg` type="image/jpeg")
+        .portfolio-inner
+            h3 about
+            p #[b WaffleKani] is an all-in-one re-tooling of #[a.link.external(href="https://www.wanikani.com/" target="_blank" rel="noopener") WaniKani] and #[a.link.external(href="https://bunpro.jp/" target="_blank" rel="noopener") Bunpro], used to teach and strengthen knowledge of the Japanese language. Using the free-to-access datasets from both services as well as additional language-learning sources, the app utilizes #[b SvelteKit] for a fast-loading, easy-to-navigate experience for the end user. The app also has a robust dashboard to access all of WaffleKani's features, similar in style to WaniKani's.
+
+    - 
+        const c2aLinks = [
+            {href: "resume",    desc: "view my resume"},
+            {href: "portfolio", desc: "more from my portfolio"}
+        ]
+    include ./includes/c2a.pug

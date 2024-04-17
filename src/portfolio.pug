@@ -3,14 +3,25 @@ extends ./templates/default.pug
 block meta
     - const title = "portfolio"
     - const desc = "The official portfolio of Spencer \"CERiNG\" Gunning, showcasing projects and achievements in graphic, web, and game design, as well as original music compositions."
-    title portfolio – cering.dev
 
 block content
-    h1.center portfolio
-    .portfolio-nav
-        a(href="./portfolio#gfx") graphics
-        a(href="./portfolio#web") webdev
-        a(href="./portfolio#games") game design
-        a(href="./portfolio#music") music
-    hr
-    #portfolio
+    h1 portfolio
+
+    mixin portfolio(href, str)
+        .portfolio-main-outer
+            .portfolio-main-text: span #{str ? str : href}
+            a.portfolio-main-inner(href=href)
+                picture.portfolio-main-image
+                    source(srcset=`./img/portfolio/${href}.png?as=webp` alt=str, type="image/webp")
+                    img(src=`./img/portfolio/${href}.png?as=jpeg` type="image/jpeg")
+
+    .portfolio-main
+        +portfolio("webdev")
+        +portfolio("graphics")
+        +portfolio("games", "game design")
+        .portfolio-main-outer
+            .portfolio-main-text: span music
+            a.portfolio-main-inner(href="https://cering.bandcamp.com/" target="_blank" rel="noopener")
+                picture.portfolio-main-image
+                    source(srcset=`./img/portfolio/music.png?as=webp` alt="music", type="image/webp")
+                    img(src=`./img/portfolio/music.png?as=jpeg` type="image/jpeg")

@@ -6,24 +6,36 @@ block meta
 
 block content
     h1.intro hi there!
-    
-    +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "")
+
+    mixin showcase(dir, color, image, title, role, alt, link)
+        .showcase-container
+            p(class=`showcase-${dir}-desc`)
+                block
+            div(class=`showcase-${dir} showcase-${color}`)
+                a.showcase-inner(href=link)
+                    picture(class=`showcase-${dir}-image`)
+                        source(srcset=`./img/home/${image}.png?as=webp` alt=alt type="image/webp")
+                        img(src=`./img/home/${image}.png` type="image/png")
+            div(class=`showcase-${dir}-detail`)
+                p.showcase-title #{title}
+                p.showcase-role(class=`soft-${color}`) #{role}
+            div(class=`showcase-${dir}-shape`): include ./img/shape.svg
+
+    +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "itg")
         span i’m CERiNG, a #[span.soft-blurple multidisciplinary designer] in new jersey
     
-    +showcase("left", "sunset", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "")
+    +showcase("left", "sunset", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "webdev")
         span developing #[span.soft-orange high quality interfaces], built just for your userbase
     
-    +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "")
+    +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "games")
         span crafting #[span.soft-purple playable experiences] for audiences on a global scale
     
-    +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "", "")
+    +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "Various commissioned works of graphics in different styles", "graphics")
         span and designing #[span.soft-sky striking visuals] for a vast range of clients.
 
-    .container
-        a.home-resume(href="mailto:hello@cering.dev")
-            p.c2a got an idea?
-            p.c2a-sub let's make something cool together.
-            .c2a-icon: include ./img/c2a.svg
-    .home-actions
-        a.action(href="/about") more about me
-        a.action(href="/resume") view my resume
+    - 
+        const c2aLinks = [
+            {href: "portfolio", desc: "check out my portfolio"},
+            {href: "resume",    desc: "view my resume"}
+        ]
+    include ./includes/c2a.pug

@@ -1,0 +1,28 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "itg"
+    - const desc = "4-panel tech, stamina, and mods created by CERiNG"
+
+block content
+    h1 itg
+
+    mixin itg(src, dl, alt)
+        a.itg-main-inner(href=dl target="_blank" rel="noopener")
+            picture.itg-main-image
+                source(srcset=`./img/itg/${src}.png?as=webp` alt=alt, type="image/webp")
+                img(src=`./img/itg/${src}.png?as=jpeg` type="image/jpeg")
+
+    .column
+        .column-container
+            h2 mods
+            .itg
+                +itg("aaa", "https://github.com/aemx/mod-releases/raw/main/packs/Aster's%20Astral%20Adventure.zip", "Aster's Astral Adventure")
+                +itg("misfits", "https://github.com/aemx/mod-releases/raw/main/packs/Misfits%20in%20the%20Prairie.zip", "Misfits in the Prairie")
+                +itg("njsrt", "https://github.com/aemx/mod-releases/raw/main/packs/NJSRT1.zip", "NJSRT")
+                +itg("cering", "https://github.com/aemx/mod-releases/raw/main/packs/CERiNG.zip", "CERiNG")
+        .column-container
+            h2 tech+stam
+            .itg
+                +itg("xronial", "https://github.com/aemx/itg-releases/raw/main/packs/Xronial%20Xyzygy.zip", "Xronial Xyzygy")
+                +itg("odim", "https://github.com/aemx/itg-releases/raw/main/packs/Omega%20Dimension.zip", "Omega Dimension")

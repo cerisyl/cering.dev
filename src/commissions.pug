@@ -1,0 +1,24 @@
+extends ./templates/default.pug
+
+block meta
+    - const title = "commissions"
+    - const desc = "CERiNG's commission information and prices."
+
+block content
+    h1.extend-none.h1-small commissions
+    p.comment-small #[i effective 21 december 2023]
+    p Please read my #[a.link(href="tos") Commission Terms of Service] before contacting me for my services. By commissioning me, you have read and agree to the terms listed above.
+    .comms
+        picture.comms-item
+            source(srcset=`./img/comms/main.png?as=webp` type="image/webp")
+            img(src=`./img/comms/main.png` type="image/png")
+        picture.comms-item
+            source(srcset=`./img/comms/extra.png?as=webp` type="image/webp")
+            img(src=`./img/comms/extra.png` type="image/png")
+
+    - 
+        const c2aLinks = [
+            {href: "tos",       desc: "read my commission tos"},
+            {href: "portfolio", desc: "view my portfolio"}
+        ]
+    include ./includes/c2a.pug
