@@ -21,4 +21,6 @@ meta(name="og:type" content="website")
 //meta(name="twitter:image", content="./img/main-twit.png")
 link#fav-light(rel="icon" href="./img/favicon.svg" type="image/svg+xml")
 link(rel="stylesheet", href="./stylus/main.styl")
+if process.env.NODE_ENV === 'production'
+    script(defer src="https://analytics.us.umami.is/script.js" data-website-id="a12c2cdf-3c43-47e3-a089-8daf4adb09f4")
 script(type="module" src="./js/main.js")

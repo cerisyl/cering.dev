@@ -163,3 +163,6 @@ test.pug
 
 # Dev planning
 .dev
+
+# Lighthouse reports
+reports
