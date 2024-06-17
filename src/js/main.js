@@ -43,27 +43,27 @@ if (page.includes('resume') || page.includes('$')) {
             } else if (hash === 'dev') {
                 req(resume_dev).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20240417-dev.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20240617-dev.pdf">download as pdf</a>
                 <a class="action" href="./webdev">view portfolio</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else if (hash === 'graphics') {
                 req(resume_graphics).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20240417-graphics.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20240617-graphics.pdf">download as pdf</a>
                 <a class="action" href="./graphics">view portfolio</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else if (hash === 'it') {
                 req(resume_it).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20240417-it.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20240617-it.pdf">download as pdf</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else {
                 req(resume_default).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20240417-default.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20240617-default.pdf">download as pdf</a>
                 `
             }
         });
