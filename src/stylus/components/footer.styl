@@ -27,7 +27,8 @@
       fill lite
     span
       text(12px, lite, 400)
-    for v, i in #695eee #1d9bf0 #ff1744
+      margin-top -1px
+    for v, i in #695eee #22c0ff #ff1744
       &:nth-child({i+1}) svg
         fill v
   &-extra-link
@@ -37,10 +38,10 @@
     padding 10px
     fill lite
     // https://hihayk.github.io/scale + 1 lighten
-    for v, i in #695eee #2899cd #58a1a4 #ff4e21 #9146ff #954176 #695eee
+    for v, i in #695eee #2899cd #58a1a4 #ff4e21 #9146ff #1d9bf0 #695eee
       &:nth-child({i+1})
         hover-svg(v)
 .copyright
-  text(14px, dark-lite, 500)
+  text(14px, dark-lite)
   text-align center
   margin-bottom 0

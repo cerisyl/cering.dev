@@ -18,20 +18,20 @@ block content
                         img(src=`./img/home/${image}.png` type="image/png")
             div(class=`showcase-${dir}-detail`)
                 p.showcase-title #{title}
-                p.showcase-role(class=`soft-${color}`) #{role}
+                p.showcase-role(class=`accent-${color}`) #{role}
             div(class=`showcase-${dir}-shape`): include ./img/shape.svg
 
     +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "itg")
-        span i’m CERiNG, a #[span.soft-blurple multidisciplinary designer] in new jersey
+        span i’m CERiNG, a #[span.accent-purple multidisciplinary designer] in illinois
     
-    +showcase("left", "sunset", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "webdev")
-        span developing #[span.soft-orange high quality interfaces], built just for your userbase
+    +showcase("left", "orange", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "webdev")
+        span developing #[span.accent-orange high quality interfaces], built just for your userbase
     
     +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "games")
-        span crafting #[span.soft-purple playable experiences] for audiences on a global scale
+        span crafting #[span.accent-pink playable experiences] for audiences on a global scale
     
     +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "Various commissioned works of graphics in different styles", "graphics")
-        span and designing #[span.soft-sky striking visuals] for a vast range of clients.
+        span and designing #[span.accent-cyan striking visuals] for a vast range of clients.
 
     - 
         const c2aLinks = [

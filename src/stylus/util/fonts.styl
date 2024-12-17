@@ -7,10 +7,10 @@ load-font(name, file, w=normal, st=normal)
         font-display swap
         font-feature-settings 'case' 1, 'ss01' 1, 'ss03' 1
 
-load-font("Inter", "Inter-Regular", normal)
-load-font("Inter", "Inter-Italic", normal, italic)
-load-font("Inter", "Inter-Bold", bold)
-load-font("Inter", "Inter-BoldItalic", bold, italic)
+load-font("Barlow", "Barlow-Regular", 400)
+load-font("Barlow", "Barlow-Italic", 400, italic)
+load-font("Barlow", "Barlow-SemiBold", 600)
+load-font("Barlow", "Barlow-SemiBoldItalic", 600, italic)
 load-font("Inter Display", "InterDisplay-Bold", bold)
 load-font("Axis", "axis")
 
@@ -21,8 +21,15 @@ head(sz, c=white, w=400, st=normal)
     font-style st
     letter-spacing -0.02em
 
+sub(sz, c=white, w=400, st=normal)
+    font sz "Inter Display", sans-serif
+    color c
+    font-weight w
+    font-style st
+    letter-spacing -0.01em
+
 text(sz, c=white, w=400, st=normal)
-    font sz "Inter", sans-serif
+    font sz "Barlow", sans-serif
     color c
     font-weight w
     font-style st

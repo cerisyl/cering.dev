@@ -51,7 +51,7 @@ p, li
 ul
     list-style-position inside
 a
-    color soft.sky
+    color accent.blue
     font-weight 600
 b
     color lite-head
@@ -81,7 +81,7 @@ hr
     top -8px
     margin-left 4px
     text-align center
-    text(14px, lite, 600)
+    text(14px, lite-head, 600)
     border-radius 4px
     padding 2px 4px
     background-color dark-lite
@@ -89,11 +89,11 @@ hr
 .action
     display inline-block
     text-align center
-    text(14px, lite, 600,, -0.02em)
+    sub(14px, lite-head, 600,, -0.02em)
     border-radius 4px
     padding 4px 12px
     background-color main-dark
-    hover-color(soft.blurple)
+    hover-highlight()
     +laptop()
         font-size 16px
 
@@ -114,7 +114,7 @@ hr
     background-color main-dark
 
 .link
-    underline(soft.sky)
+    underline(accent.blue)
 
 .external::after
     content "🡥"

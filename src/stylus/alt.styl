@@ -7,13 +7,13 @@ body
     margin 0 auto
     padding 0 24px
 h1
-    head(64px, dark, 600)
+    sub(64px, dark, 600)
     margin-bottom 16px
 h2
-    head(42px, main-mid, 600)
+    sub(42px, #483f7f, 600)
     margin-bottom 12px
 h3
-    head(28px, dark, 600)
+    sub(28px, dark, 600)
     margin-bottom 4px
 
 p, li
@@ -24,7 +24,7 @@ p, li
 ul
     list-style-position inside
 a
-    color soft.blue
+    color #326cbf
     font-weight 600
     text-decoration underline
 b
@@ -73,15 +73,13 @@ b
         flex(row-reverse, nowrap, center, center, 24px)
         &-links
             display none
-    &-me
-        width 150px
-        border-radius 8px
     &-h1
-        font-size 50px
+        font-size 56px
         margin-bottom 0px !important
     &-sub
-        text(22px, dark, 600)
+        text(24px, dark, 600)
         font-style italic
+        text-align center
     &-left
         position relative
         flex(column, nowrap, stretch, stretch)
@@ -100,14 +98,14 @@ b
                 line-height 16px
                 margin-bottom 0
     &-right
-        border-left 2px solid main-mid
+        border-left 2px solid #483f7f
         padding-left 32px
         &-date
             margin-top 6px
             text-align left
             line-height 10px !important
-            min-width 80px
-            max-width 80px
+            min-width 60px
+            max-width 60px
         &-container
             flex(row, nowrap, left, gap: 8px)
             margin-bottom 16px

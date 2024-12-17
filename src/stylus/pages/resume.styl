@@ -10,27 +10,24 @@
     +laptop()
       gap: 24px
     &-links
-      flex(row, nowrap, left, gap: 8px)
-  &-me
-    width 150px
-    border-radius 8px
+      flex(row, nowrap, center, gap: 8px)
   &-h1
-    text(6.47vw, lite-head, 600)
+    sub(6.47vw, lite-head, 600)
     text-align center
-    margin-bottom 0px !important
+    margin-bottom -2px !important
     +tablet()
-      font-size 4.3vw
+      font-size 6.1vw
       text-align left
     +standard()
-      font-size 44px
+      font-size 56px
   &-sub
     text(3.4vw, lite, 600)
     font-style italic
+    text-align center
     +tablet()
-      font-size 2.2vw
-      text-align left
+      font-size 2.6vw
     +standard()
-      font-size 20px
+      font-size 24px
   &-left
     position relative
     +laptop()
@@ -46,7 +43,6 @@
       max-width calc(50% - 8px)
       +laptop()
         background-color dark-mid
-        outline 1px solid main-mid
         padding 8px
         border-radius 4px
         min-width 100%
@@ -75,8 +71,7 @@
       flex(column, nowrap)
       margin-bottom 16px
       background-color dark-mid
-      border-left 8px solid main-mid
-      outline 1px solid main-mid
+      border-left 4px solid main-mid
       padding 12px 16px
       border-radius 4px
       +tablet()

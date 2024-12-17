@@ -1,49 +1,26 @@
 // standard ///////////////////////////////////////////////////////////////////
 
-main-lite     = #b29ae8
-main-mid      = #6458b0
-main-dark     = #5d31d2
-lite-head     = #eceaed
-lite          = #e3e3e3
-lite-dark     = #9a9a9a
-dark-lite     = #424242
-dark-mid      = #1c1c1c
-dark          = #131115
-cering-purple = #9950ff
-
-// gradients //////////////////////////////////////////////////////////////////
-
-gracer = #b941d6, cering-purple
-
-soft = {
-  red:        #ff5050
-  sunset:     #f25f4a
-  orange:     #d87d3f
-  yellow:     #d8c93f
-  green:      #93ce3d
-  teal:       #5eeeb2
-  cyan:       #53b6e3
-  sky:        #5e98ee
-  blue:       #3673c6
-  blurple:    #695eee
-  purple:     #b15eee
-  pink:       #d95ee6
-  magenta:    #ff50a6
-}
-
-for key, value in soft
-  .soft-{key}
-    color value
+main-lite     = #d9b6fc
+main-mid      = #c084fc
+main-dark     = #855ee8
+lite-head     = #f2f3f5
+lite          = #b8b8c7
+lite-dark     = #858597
+dark-lite     = #515167
+dark-mid      = #212128
+dark          = #1a1a1f
 
 accent = {
-  red:        #ff1744
-  orange:     #ff6d00
-  yellow:     #ffc400
-  green:      #76ff03
-  teal:       #00e676
-  cyan:       #00e5ff
-  blue:       #304ffe
-  blurple:    #651fff
-  purple:     #e040fb
-  magenta:    #ff4081
+  red:        #ef4444,
+  orange:     #ffb86c,
+  yellow:     #fde047,
+  green:      #4ade80,
+  cyan:       #67e8f9,
+  blue:       #60a5fa,
+  purple:     #855ee8,
+  pink:       #c084fc,
 }
+
+for key, value in accent
+  .accent-{key}
+    color value
