@@ -21,6 +21,26 @@ accent = {
   pink:       #c084fc,
 }
 
+diffs = {
+  beginner:   accent.purple,
+  easy:       accent.green,
+  medium:     accent.yellow,
+  hard:       accent.red,
+  challenge:  accent.blue,
+  edit:       lite-dark,
+}
+
+bpms = {
+  "110":      lite-dark,
+  "120":      accent.blue,
+  "130":      accent.green,
+  "140":      accent.yellow,
+  "150":      accent.orange,
+  "160":      accent.red,
+  "170":      accent.purple,
+  "180":      accent.yellow, // will hue shift
+}
+
 for key, value in accent
   .accent-{key}
     color value

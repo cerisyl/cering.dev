@@ -1,31 +1,14 @@
-// Toggle a list of element-class pairs based on conditionals
-export const toggleClasses = (addCondition, removeCondition, ...pairs) => {
-    if (addCondition) {
-        pairs.forEach(pair => pair[0].classList.add(pair[1]))
-    } else if (removeCondition) {
-        pairs.forEach(pair => pair[0].classList.remove(pair[1]))
-    }
-}
-
-// Adds an event listener with full touch/click coverage
-export const addClickListener = func => {
-    if (window.hasOwnProperty('ontouchstart')) {
-        window.addEventListener('touchstart', func);
-    } else {
-        window.addEventListener('click', func);
-    }
-}
+import * as util from './util';
 
 // Icon sticks when selected on mobile, darken and freeze
 export const sticky = () => {
-    addClickListener(e => {
+    util.addClickListener(e => {
         if (document.documentElement.scrollTop < 30) {
             const links = document.getElementById("links");
             const menu = document.getElementById("nav-toggle");
             const header = document.querySelector("header");
             const body = document.querySelector("body");
-            const main = document.querySelector("main");
-            toggleClasses(
+            util.toggleClasses(
                 menu.contains(e.target) && !menu.classList.contains("enlarge"),
                 !links.contains(e.target) && menu.classList.contains("enlarge"),
                 [links, "nav-active"],

@@ -4,25 +4,32 @@
   background-color dark
   animate(outline)
   outline 0px solid main-dark
-  &-outline
-    outline 4px solid main-dark
-    +laptop()
-      transition none
-      outline 0px solid main-dark
+  outline 4px solid main-dark
+  +laptop()
+    background-color transparent
+    transition none
+    outline 0px solid main-dark
 
 .logo
   display inline-block
   margin -8px
   padding 8px
+  position relative
   &-small
     svg
       width 44px
       margin-bottom -4px
   &-full
-    display none
     svg
-      width 200px
+      width 172px
       margin-bottom -4px
+  &-text
+    position absolute
+    text(11px, lite-dark, bold, italic)
+    letter-spacing 1.3px
+    top 60px
+    left 11px
+    user-select none
 
 .nav
   flex(column, nowrap)
@@ -36,13 +43,15 @@
   z-index -1
   width 100%
   animate(top)
+  user-select none
   +laptop()
     flex(row, nowrap, space-around, center)
     position static
     background-color transparent
     backdrop-filter none
     z-index 0
-    margin-left 40px
+    margin-left 20px
+    margin-right -24px
   &-link
     head(20px, lite-head, 600)
     padding calc(-12px + (100dvh - 94px) / 7 / 2) 24px
@@ -55,7 +64,7 @@
   &-dropdown
     display none
   &-active
-    top calc(98px)
+    top 118px
   &-toggle
     margin -8px -12px -8px -8px
     padding 8px

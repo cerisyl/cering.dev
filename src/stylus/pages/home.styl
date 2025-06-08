@@ -2,6 +2,13 @@
   white-space-collapsing discard
   text-align center
   margin-bottom 36px
+  font-style italic
+
+.me
+  font-size 1.1em
+  font-style italic
+  letter-spacing -2px
+  color main-dark
 
 .showcase
   position relative
@@ -41,7 +48,7 @@
     axis(26px, lite-head)
     margin-bottom -4px
   &-role
-    axis(18px, auto)
+    axis(16px, auto)
     margin-bottom 0
   &-inner
     line-height 0
@@ -57,10 +64,12 @@
     position absolute
     z-index -1
     width 90vw
+    svg
+      fill dark-mid
     +tablet()
-      width 340px
+      width 300px
     +laptop()
-      width 400px
+      width 360px
 
   // positions
   &-left
@@ -137,3 +146,46 @@
     background accent.pink
   &-cyan
     background accent.cyan
+
+// special release/showcase
+.special
+  flex(row, nowrap, center, center, gap: 32px)
+  min-height calc(100dvh - 114px - 32px - 149px)
+  &-left
+    width 50%
+    flex(column, align: right)
+    p
+      text-align right
+  &-right
+    width 50%
+    flex(column, align: left)
+    p
+      text-align left
+  &-text
+    text(18px, lite-head)
+    margin-bottom 8px
+    +tablet()
+      font-size 20px
+      margin-bottom 4px
+    +laptop()
+      font-size 24px
+      margin-bottom 0px
+    &-small
+      text(16px, lite-head)
+      margin-bottom 8px
+      +tablet()
+        font-size 18px
+      +laptop()
+        margin-bottom 2px
+  &-hero
+    img
+      width 100%
+  &-label
+    head(28px, lite-head, 600, italic)
+    position absolute
+    left 48.5%
+    z-index 2
+    animation pulse 1.3s ease-in-out infinite alternate
+  &-actions
+    flex(row, wrap, left, center, gap: 16px)
+    margin-left 24px

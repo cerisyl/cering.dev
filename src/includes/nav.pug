@@ -1,16 +1,18 @@
 header.header
     a.logo(href="/" title="CERiNG")
-        .logo-small: include ../img/favicon.svg
-        //-.logo-full: include ../img/logo.svg
+        //-.logo-small: include ../img/favicon.svg
+        .logo-full
+            include ../img/logo.svg
+            p.logo-text celebrating ten years
     div.nav-toggle#nav-toggle
         include ../img/icons/menu.svg
     nav.nav#links
-        a.nav-link(href="./portfolio") portfolio
-        a.nav-link(href="./webdev") webdev
         //-a.nav-link(href="./projects") projects
         a.nav-link(href="./itg") itg
         a.nav-link(href="./graphics") graphics
+        a.nav-link(href="./webdev") webdev
         a.nav-link(href="https://cering.bandcamp.com/" target="_blank" rel="noopener") music
+        a.nav-link(href="./portfolio") portfolio
         a.nav-link(href="./commissions") commissions
         a.nav-link(href="./resume") resume
         //-a.nav-link(href="./blog") blog

@@ -5,37 +5,63 @@ block meta
     - const desc = "The official website of Spencer \"CERiNG\" Gunning- a multidisciplinary designer and programmer specializing in UI/UX, graphics, and game design."
 
 block content
-    h1.intro hi there!
+    h1.nodisplay new from CERiNG
 
-    mixin showcase(dir, color, image, title, role, alt, link)
-        div(class=`showcase-${dir}-container`)
-            p(class=`showcase-${dir}-desc`)
-                block
-            div(class=`showcase-${dir} showcase-${color}`)
-                a.showcase-inner(href=link)
-                    picture(class=`showcase-${dir}-image`)
-                        source(srcset=`./img/home/${image}.png?as=webp` alt=alt type="image/webp")
-                        img(src=`./img/home/${image}.png` type="image/png")
-            div(class=`showcase-${dir}-detail`)
-                p.showcase-title #{title}
-                p.showcase-role(class=`accent-${color}`) #{role}
-            div(class=`showcase-${dir}-shape`): include ./img/shape.svg
+    .special
+        .special-left
+            p.special-text Your heart pounds through your chest.
+            p.special-text Your breathing, erratic.
+            p.special-text Sweat floods your dancepad.
+            p.special-text It's just a few more measures.
+            p.special-text The end is in sight.
+            p.special-text It's the thrill of the game.
+            p.special-text This is #[b.accent-red Next Generation Stamina].
+        .special-right
+            picture.special-hero
+                source(srcset=`./img/itg/hero/ceristreams.png?as=webp` type="image/webp" alt="CERiSTREAMS: Next Generation Stamina")
+                img(src=`./img/itg/hero/ceristreams.png` type="image/png")
+            .container-small
+                p.special-text-small #[b ⏵] #[b.accent-pink 25 songs] with full difficulties
+                p.special-text-small #[b ⏵] #[b.accent-pink 3] original, marathon-length mixes
+                p.special-text-small #[b ⏵] #[b.accent-pink 40] featured artists
+                p.special-text-small #[b ⏵] Over #[b.accent-pink 4500 measures] of streams #[i.comment-small (in Expert alone!)]
+                p.special-text-small #[b ⏵] Extensively featured in #[b.accent-pink Stamina RPG] and #[b.accent-pink ITL Online]
+            .special-actions
+                p.special-label out now
+                a.action(href="ttps://github.com/cerisyl/itg-releases/raw/main/packs/CERiSTREAMS.zip" target="_blank" rel="noopener" title="Download CERiSTERAMS" aria-label="Download CERiSTERAMS")
+                    span Download
+                a.action(href="./ceristreams" title="CERiSTERAMS Song list" aria-label="CERiSTERAMS song list")
+                    span Song list
 
-    +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "itg")
-        span i’m CERiNG, a #[span.accent-purple multidisciplinary designer] in illinois
-    
-    +showcase("left", "orange", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "webdev")
-        span developing #[span.accent-orange high quality interfaces], built just for your userbase
-    
-    +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "games")
-        span crafting #[span.accent-pink playable experiences] for audiences on a global scale
-    
-    +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "Various commissioned works of graphics in different styles", "graphics")
-        span and designing #[span.accent-cyan striking visuals] for a vast range of clients.
+    //- div
+        mixin showcase(dir, color, image, title, role, alt, link)
+            div(class=`showcase-${dir}-container`)
+                p(class=`showcase-${dir}-desc`)
+                    block
+                div(class=`showcase-${dir} showcase-${color}`)
+                    a.showcase-inner(href=link)
+                        picture(class=`showcase-${dir}-image`)
+                            source(srcset=`./img/home/${image}.png?as=webp` alt=alt type="image/webp")
+                            img(src=`./img/home/${image}.png` type="image/png")
+                div(class=`showcase-${dir}-detail`)
+                    p.showcase-title #{title}
+                    p.showcase-role(class=`accent-${color}`) #{role}
+                div(class=`showcase-${dir}-shape`): include ./img/favicon.svg
 
-    - 
-        const c2aLinks = [
-            {href: "portfolio", desc: "check out my portfolio"},
-            {href: "resume",    desc: "view my resume"}
-        ]
-    include ./includes/c2a.pug
+        +showcase("right", "blue", "njsrt", "NJSRT", "Project Lead", "A collage of assets used in and screenshots from the New Jersey Sight Reading Tournament", "itg")
+            span i’m #[span.me cering], a #[span.accent-blue multidisciplinary designer] in illinois
+
+        +showcase("left", "orange", "rpl", "Raritan Public Library", "Webdev + Visual Identity", "Desktop and mobile-sized screenshots of the Raritan Public Library’s website, with some promotional assets", "webdev")
+            span developing #[span.accent-orange high quality interfaces], built just for your userbase
+
+        +showcase("right", "pink", "arc", "Arcaea", "Level Design", "In-game screenshots of Arcaea on the Nintendo Switch and a mobile phone", "games")
+            span crafting #[span.accent-pink playable experiences] for audiences on a global scale
+
+        +showcase("left", "cyan", "gfx", "Commissioned Work", "Graphic Design", "Various commissioned works of graphics in different styles", "graphics")
+            span and designing #[span.accent-cyan striking visuals] for a vast range of clients.
+        - 
+            const c2aLinks = [
+                {href: "portfolio", desc: "check out my portfolio"},
+                {href: "resume",    desc: "view my resume"}
+            ]
+        include ./includes/c2a.pug

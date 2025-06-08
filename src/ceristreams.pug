@@ -1,0 +1,37 @@
+extends ./templates/default.pug
+
+block meta
+  - const title = "CERiSTREAMS"
+  - const desc = "An ITG stamina pack for a new generation, by CERiNG."
+
+block content
+  h1.nodisplay CERiSTREAMS
+
+  picture.itg-hero
+    source(srcset=`./img/itg/hero/ceristreams.png?as=webp` type="image/webp")
+    img(src=`./img/itg/hero/ceristreams.png` type="image/png")
+
+  .itg-downloads
+    a.action(href="https://github.com/cerisyl/itg-releases/raw/main/packs/CERiSTREAMS.zip" target="_blank" rel="noopener" title="Download" aria-label="Download CERiSTREAMS")
+      span Download
+    a.action(href="https://www.dropbox.com/scl/fi/7ki7xgio8c2ssip3fopzx/CERiSTREAMS.zip?rlkey=q57adb68uzszqyvem49aobiw2&e=1&st=bpy4jmdy&dl=1" target="_blank" rel="noopener" title="Dropbox mirror" aria-label="Dropbox mirror")
+      span Dropbox Mirror
+    a.action(href="https://drive.google.com/file/d/1u2wyB-pdXf-_R02abaloYYKUL9kwvmdQ/view?usp=sharing" target="_blank" rel="noopener" title="Google Drive mirror" aria-label="Google Drive mirror")
+      span Google Drive Mirror
+
+  h1 song list
+  .itg-sorts
+    .itg-subsorts
+      button.action#toggle-list
+        span Change list style
+      button.action.action-disabled#toggle-diffs
+        span Show/hide lowers
+    .itg-subsorts
+      p.extend-none #[b Sort:]
+      button.action#sort-bpm
+        span BPM
+      button.action.action-hollow#sort-sx
+        span Difficulty
+      button.action.action-hollow#sort-alpha
+        span Alphabetical
+  .songlist#charts

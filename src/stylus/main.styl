@@ -1,7 +1,9 @@
 @require './util/color'
 @require './util/fonts'
 @require './util/mixins'
+@require './util/motion'
 @require './util/reset'
+@require './components/bg'
 @require './components/c2a'
 @require './components/footer'
 @require './components/header'
@@ -23,18 +25,19 @@ body
 main
     margin 0 auto
     padding 8px 24px
-    min-height calc(100dvh - 93px - 16px - 149px)
+    min-height calc(100dvh - 114px - 32px - 133px)
     overflow-x clip
     +standard()
         overflow-x visible
 h1
-    head(64px, lite-head, 600)
+    head(64px, lite-head, 600, italic)
     margin-bottom 16px
-.h1-small
-    head(12.8vw, lite-head, 600)
-    margin-bottom 16px
-    +tablet()
-        head(64px, lite-head, 600)
+.h1
+    &-small
+        head(12.8vw, lite-head, 600, italic)
+        margin-bottom 16px
+        +tablet()
+            head(64px, lite-head, 600, italic)
 h2
     head(42px, lite-head, 600)
     margin-bottom 12px
@@ -42,7 +45,7 @@ h3
     head(28px, lite-head, 600)
     margin-bottom 4px
 .hsub
-    axis(22px, lite)
+    text(22px, lite)
 p, li
     text(16px, lite, 400)
     line-height 20px
@@ -89,13 +92,28 @@ hr
 .action
     display inline-block
     text-align center
-    sub(14px, lite-head, 600,, -0.02em)
+    sub(14px, lite-head, 600)
+    line-height 1.3em
     border-radius 4px
     padding 4px 12px
     background-color main-dark
-    hover-highlight()
+    user-select none
+    cursor pointer
+    animate(all)
+    hover-color(#9d69ff)
+    outline 2px transparent solid
+    outline-offset -1px
     +laptop()
         font-size 16px
+    &-hollow
+        outline-color main-dark
+        background-color dark
+        hover-color(main-dark)
+    &-disabled
+        color lite-dark
+        background-color dark-lite
+        hover-color(dark-lite)
+        cursor default
 
 .center
     text-align center
@@ -106,23 +124,23 @@ hr
 .num
     display inline-block
     text-align center
-    text(14px, lite, 600,, -0.02em)
+    text(14px, lite-head, 600,, -0.02em)
     width 32px
     border-radius 4px
     padding 2px 4px
     margin-right 4px
-    background-color main-dark
+    background-color dark-lite
 
 .link
     underline(accent.blue)
 
 .external::after
-    content "🡥"
+    content "↗"
     position relative
     font-size 0.6em
-    top -1px
+    top -6px
     letter-spacing 0px
-    margin-left 3px
+    margin-left 0px
 
 .extend
     &-small
@@ -131,7 +149,9 @@ hr
         margin-bottom 0
 
 .container
-    margin-bottom 32px  
+    margin-bottom 32px
+    &-small
+        margin-bottom 16px
 
 .crunch
     line-height 10px !important
@@ -146,18 +166,18 @@ hr
     0%
         filter hue-rotate(0deg)
     50%
-        filter hue-rotate(100deg)
+        filter hue-rotate(180deg)
     100%
-        filter hue-rotate(0deg)
+        filter hue-rotate(360deg)
 
 .link
     text-align justify
     &-epic
         @extend .link
-        animation awes 2s infinite
+        animation awes 6s infinite
 
 .sig
-    margin-top 4px
+    margin-top 0px
     text-align right
     svg
         width 225px
@@ -176,3 +196,6 @@ hr
 
 .column
     flex(column, nowrap, gap: 16px)
+
+.nodisplay
+    display none

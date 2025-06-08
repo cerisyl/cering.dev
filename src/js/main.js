@@ -1,15 +1,12 @@
+import * as itg from './itg';
 import * as nav from './nav';
+import * as util from './util';
 import resume_default from 'url:../includes/resume/default.pug';
 import resume_dev from 'url:../includes/resume/dev.pug';
 import resume_it from 'url:../includes/resume/it.pug';
 import resume_graphics from 'url:../includes/resume/graphics.pug';
+import data_ceristreams from 'url:../data/itg/streams/pack.json';
 import Macy from "macy"
-
-// Generate a request and response using a url and handling function
-const req = async (url) => {
-    const response = await fetch(url);
-    return response.text();
-};
 
 // Get page details
 const url = window.location.href
@@ -33,29 +30,29 @@ if (page.includes('resume') || page.includes('$')) {
             const target = document.getElementById('resume');
             const links = document.getElementById('resume-links');
             if (hash === 'dev') {
-                req(resume_dev).then(html => target.innerHTML = html);
+                util.req(resume_dev).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20241218s-dev.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20241218-dev.pdf">download as pdf</a>
                 <a class="action" href="./webdev">view portfolio</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else if (hash === 'graphics') {
-                req(resume_graphics).then(html => target.innerHTML = html);
+                util.req(resume_graphics).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20241218s-graphics.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20241218-graphics.pdf">download as pdf</a>
                 <a class="action" href="./graphics">view portfolio</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else if (hash === 'it') {
-                req(resume_it).then(html => target.innerHTML = html);
+                util.req(resume_it).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20241218s-it.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20241218-it.pdf">download as pdf</a>
                 <a class="action" href="./resume">view general resume</a>
                 `
             } else {
-                req(resume_default).then(html => target.innerHTML = html);
+                util.req(resume_default).then(html => target.innerHTML = html);
                 links.innerHTML = `
-                <a class="action" href="./docs/SpencerGunning-Resume_20241218s.pdf">download as pdf</a>
+                <a class="action" href="./docs/SpencerGunning-Resume_20241218.pdf">download as pdf</a>
                 `
             }
         });
@@ -69,4 +66,6 @@ if (page.includes('resume') || page.includes('$')) {
             500: 2
         }
     });
+} else if (page.includes("ceristreams")) {
+  util.reqJson(data_ceristreams, itg.listControl);
 }

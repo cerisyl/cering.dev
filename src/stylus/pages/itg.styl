@@ -1,6 +1,33 @@
 .itg
   flex(row, wrap, start, gap: 8px)
   margin-bottom 16px
+  &-hero
+    flex(align: center)
+    margin-bottom 16px
+    img
+      min-width 50%
+      width 440px
+  &-downloads
+    flex(row, wrap, center, center, gap: 16px)
+    margin-bottom 24px
+  &-sorts
+    flex(row, wrap, space-between, center, gap: 16px)
+    margin-bottom 16px
+  &-subsorts
+    flex(row, wrap, left, center, gap: 16px)
+  &-bpm
+    font-weight 600
+  &-diff
+    flex(align: center, x-align: center)
+    border-radius 4px
+    background-color dark-mid
+    width 24px
+    height 24px
+    cursor pointer
+    margin-top -1px
+    user-select none
+    span
+      margin-left 1px
   &-main
     &-inner
       width calc(50% - 4px)
@@ -9,8 +36,105 @@
       border-radius 4px
       +tablet()
         width calc(33% - 4px)
-
     &-image
       source, img
         width 100%
         border-radius 4px
+
+for key, value in diffs
+  .itg-diff-{key}
+    @extends .itg-diff
+    border 1px solid value
+    animate(background-color)
+    &:hover, &:focus
+      background-color value
+      span
+        color dark
+    span
+      mega(14px, value)
+      animate(color)
+    &-fill
+      @extends .itg-diff
+      background-color value
+      cursor auto
+      animate(background-color)
+      span
+        mega(14px, dark)
+        animate(color)
+    &-alt
+      @extends .itg-diff-{key}-fill
+      width 56px
+      height 24px
+      cursor auto
+
+for key, value in bpms
+  .itg-bpm-{key}
+    @extends .itg-bpm
+    color value
+    if key == "180"
+      animation awes 6s infinite
+
+.chart
+  $width = 420px
+  flex(row, nowrap, start, center)
+  &-meta, &-stats
+    flex(column, nowrap)
+  &-bn
+    width $width
+    border-radius 4px 0 0 0
+  &-inner
+    flex(row, nowrap, space-between, center)
+    padding 4px 12px
+    min-height 36px
+    border-radius 0 0 0 4px
+    background-color dark-mid
+    p
+      margin-bottom 0
+  &-diffs
+    flex(row, nowrap, start, center, gap: 8px)
+  &-graph
+    width $width
+    height "calc((200 / 512) * %s)" % $width
+    svg
+      width $width
+      height "calc((200 / 512) * %s)" % $width
+      background-color dark-mid
+      border-radius 0 4px 0 0
+  &-desc
+    flex(row, nowrap, center, center)
+    padding 4px 12px
+    min-height 36px
+    border-radius 0 0 4px 0
+    background-color dark-mid
+    p
+      font-weight 600
+      margin-bottom 0
+
+.songlist
+  flex(column, nowrap, start, center, gap: 8px)
+  &-entry
+    flex(row, nowrap, start, center, gap: 32px)
+    width 100%
+    padding 6px 8px
+    position relative
+    &:nth-child(odd)
+      background-color dark
+    &:nth-child(even)
+      background-color dark-mid
+    &:first-child
+      border-radius 4px 4px 0 0
+    &:last-child
+      border-radius 0 0 4px 4px
+    p
+      margin-bottom 0
+    &-bpm
+      width 64px
+    &-breakdown
+      position absolute
+      right 8px
+      white-space nowrap
+      p
+        text-align right
+
+.nogaps
+  gap 0px
