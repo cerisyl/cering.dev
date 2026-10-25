@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>cering.dev</title>
+  <link>https://cering.dev/</link>
+  <description>updates from CERiNG, your digital angel: blog posts, itg, projects, and more</description>
+  <language>en-us</language>
+  <webMaster>cering@cering.dev</webMaster>
+  <managingEditor>cering@cering.dev</managingEditor>
+  <copyright>cering.dev</copyright>
+  <image>
+    <title>cering.dev</title>
+    <link>https://cering.dev/</link>
+    <url>https://cering.dev/img/favicon.svg</url>
+    <width>16</width>
+    <height>16</height>
+  </image>
+  <item>
+    <tags>itg, site</tags>
+    <title>CERiSTREAMS 2 out + new website!</title>
+    <pubDate>Sun, 25 Oct 2026 13:30:00 -0500</pubDate>
+    <link>https://cering.dev/itg/streams2</link>
+    <author>cering@cering.dev</author>
+    <description><b>CERiSTREAMS 2</b> is out now! the pack includes 25 new songs in the series with full difficulties, and 3 new original marathon-length mixes. also, the cering.dev website has gotten a design refresh, along with this fancy RSS feed! it's only about 60% of the way there at this point, so expect to see some smaller developments in the coming weeks!</description>
+  </item>
+</channel>
+</rss>

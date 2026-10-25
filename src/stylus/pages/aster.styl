@@ -1,0 +1,74 @@
+.main-inner:has(.aster)
+  background url("/img/overlays/aster.png")
+
+.content:has(.aster) .content-outer
+  color aster
+
+.aster
+  position relative
+  h1,h2,h3
+    font-family "Venture13", sans-serif
+    font-weight normal
+    color lite
+  h3
+    margin-bottom 4px
+  .comment
+    color neutral
+  .action
+    font-family "Venture13", sans-serif
+    font-weight normal
+    background-color aster
+    border-color aster
+    color lite
+    padding 2px 16px
+    span
+      margin-bottom -4px
+    &-icon
+      color lite
+      margin-left 2px
+      margin-top -12px
+    &:hover
+      color dark
+      background-color aster-alt
+      .action-icon
+        color dark
+  &-section
+    font-size 16px
+    padding 16px
+    color lite
+    background-color mix(aster, dark)
+    border-radius 4px
+    margin-bottom 24px
+  &-text
+    color lite
+  .upsell
+    &-nw, &-ne, &-sw, &-se
+      border-color aster
+  .chart
+    border 1px solid aster
+    border-radius 4px
+    &-card, &-bn
+      height 72px
+    &-inner
+      flex(column, nowrap, center, start, 0)
+    &-artist, &-title
+      font-family "Inversionz", sans-serif
+      font-weight normal
+      blend-mode overlay
+      margin -0.1em 0
+    &-artist
+      font-size 24px
+      letter-spacing -2px
+      color aster-alt
+    &-title
+      font-size 56px
+      letter-spacing -8px
+      color lite
+    &:hover
+      filter brightness(140%) saturate(150%)
+
+.greeble-aster
+  around(16px, aster-alt)
+  margin-top -16px
+  margin-bottom 16px
+  user-select none

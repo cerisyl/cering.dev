@@ -1,0 +1,216 @@
+flip-filters()
+  transition filter 0.45s cubic-bezier(0.5,0,0,1);
+
+.chart
+  $height = 96px
+  flex(column)
+  position relative
+  overflow hidden
+  &-card
+    z-index 1
+    flex(row, nowrap)
+    height $height
+    position relative
+    overflow hidden
+    transition transform 0.7s cubic-bezier(0.33,1,0.68,1)
+    &-flipped
+      user-select none
+      pointer-events none
+      transform rotateY(-180deg)
+      .chart-inner, .chart-img, .chart-graph
+        filter contrast(20%) brightness(25%)
+  &-bn
+    z-index 0
+    position absolute
+    width 100%
+    height $height
+    overflow hidden
+    border-radius 4px
+    &-mix
+      @extends .chart-bn
+      border-radius 4px 4px 0 0
+  &-img
+    position relative
+    width 100%
+    filter contrast(90%) brightness(45%)
+    flip-filters()
+  &-graph
+    position absolute
+    z-index 0
+    right 0
+    bottom -5px
+    flip-filters()
+    svg
+      width 425px
+      height $height * 0.75
+      border-radius 0 0 4px 0
+  &-inner
+    z-index 1
+    flex(column, nowrap, end, stretch)
+    padding 8px
+    width 100%
+    flip-filters()
+  &-meta
+    flex(column, nowrap, space-between)
+  &-artist
+    text(12px, lite, 700)
+    margin-bottom -6px
+  &-title
+    head(36px, lite, 700)
+    margin-bottom -8px
+  &-subtitle
+    head(16px, lite, 700, italic)
+  &-diffs
+    position absolute
+    left 8px
+    top 8px
+    flex(row, wrap, end, center, 8px)
+  &-desc
+    position absolute
+    right 8px
+    top 4px
+    color lite
+    text-align right
+    font-weight bold
+  &-mix
+    z-index 2
+    flex(align: space-between)
+    background-color neutral-2
+    border-radius 0 0 4px 4px
+    padding 0 8px
+    overflow hidden
+    height 26px
+    user-select none
+    cursor pointer
+    animate(background-color)
+    position relative
+    bottom 0
+    animate(( background-color height bottom margin-bottom ))
+    &:hover
+      background-color _purple
+      height calc(26px + 12px)
+      bottom 12px
+      margin-bottom -12px
+      & ^[-1]-listen
+        bottom -2px
+      & ^[-1]-play
+        letter-spacing 6px
+        right -8px
+        bottom 5px
+    &-listen
+      position relative
+      helv(40px, _yellow, 700, italic)
+      bottom 3px
+      animate(bottom)
+    &-play
+      position relative
+      head(40px, _yellow, 700, italic)
+      letter-spacing -5px
+      bottom 9px
+      right 0
+      animate((letter-spacing right bottom))
+  &-more
+    width 0
+    height 100%
+    head(24px, lite, 700, italic)
+    animate(width)
+    background-color _purple
+    cursor pointer
+    border-radius 0 4px 4px 0
+    user-select none
+    &-hover
+      position absolute
+      width 24px
+      height 100%
+      right 0px
+      border-radius 0 4px 4px 0
+      cursor pointer
+      &:active
+        pointer-events none
+      &:hover .chart-more
+        width 24px
+  &-lore
+    position absolute
+    padding 8px
+    width 100%
+    color lite
+    backface-visibility hidden
+    transform rotateY(180deg)
+    br
+      margin-bottom 16px
+
+.chart-small
+  flex(column)
+  position relative
+  overflow hidden
+  border-radius 4px
+  &-card
+    flex(row, nowrap)
+    position relative
+    overflow hidden
+  &-bn
+    @extends .chart-bn
+  &-img
+    @extends .chart-img
+  &-inner
+    flex(row, nowrap, start, stretch, 8px)
+    padding 8px
+    width 100%
+    z-index 2
+  &-meta
+    text(16px, lite, bold)
+    margin-bottom 0
+  &-contrib
+    text(12px, neutral, bold, italic)
+  &-desc
+    text(16px, lite, normal)
+    flex-grow 1
+    text-align right
+    margin-bottom 0
+  &:hover
+    filter brightness(140%) saturate(150%)
+
+diff()
+  flex(align: center, x-align: center)
+  border-radius 4px
+  width 22px
+  height 22px
+  cursor pointer
+  user-select none
+  span
+    margin-left 1px
+  &:hover
+    background-color value
+    span
+      color dark
+
+for key, value in diffs
+  .difficulty-{key}
+    diff()
+    outline 1px solid value
+    background-color dark
+    span
+      mega(14px, value)
+    &-fill
+      diff()
+      //outline 1px solid dark
+      background-color value
+      span
+        mega(14px, dark)
+    &-list
+      display inline-block
+      border-radius 4px
+      padding 4px 4px 2px 4px
+      width 56px
+      cursor pointer
+      user-select none
+      background-color value
+      text-align center
+      span
+        mega(16px, dark)
+
+for key, value in bpms
+  .bpm-{key}
+    color value
+    if key == 180
+      rgb-cycle()

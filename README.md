@@ -1,0 +1,3 @@
+# requirements
+- ffprobe
+- node

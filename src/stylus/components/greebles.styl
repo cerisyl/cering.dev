@@ -1,0 +1,52 @@
+.greeble
+  &-line
+    flex(gap: 16px)
+    align-self stretch
+    helv(14px, dark)
+    margin 0 0 16px
+    line-height 16px
+    user-select none
+    &:after
+      flex-grow 1
+      content ""
+      border-bottom 1px solid accent
+      margin-bottom 9px
+  &-exs
+    align-self center
+    text-align center
+    mono(16px, neutral-1)
+    margin 16px 0
+    letter-spacing 16px
+    user-select none
+  &-text
+   flex()
+   mono(12px, neutral)
+   text-transform uppercase
+   letter-spacing 0px
+   text-align left
+   margin 16px 0
+   &-main
+     color neutral-2
+     font-weight 700
+  &-block
+    flex(row, nowrap, left, center, 6px)
+    sub(12px, dark, 700)
+    text-transform uppercase
+    &:before
+      content " "
+      display inline-block
+      background-color accent
+      width 12px
+      height 12px
+  &-text
+    specify(7px, neutral-1)
+    letter-spacing 5px
+
+  // modifiers
+  &-no-margin
+    margin 2px 0 0
+  &-is-dotted:after
+    border-bottom-style dotted
+  &-is-right
+    flex-direction row-reverse
+    justify-content right

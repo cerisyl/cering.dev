@@ -1,0 +1,25 @@
+.comms
+  &-section
+    flex(row, nowrap, space-between, gap: 16px)
+    height 200px
+    background-color neutral
+  &-info
+    width 200px
+    h2
+      line-height 28px
+      margin 16px 0
+      text-align right
+      z-index 2
+    &-list p
+      margin-bottom 0
+      &::before
+        content '+ '
+        font-weight bold
+  &-price
+    stretch(80px, alpha(accent, 0.4))
+    letter-spacing -6px
+    margin 24px 0 -24px
+    user-select none
+  &-samples
+    img
+      width 100%

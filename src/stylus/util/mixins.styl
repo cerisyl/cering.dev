@@ -1,0 +1,112 @@
+// Structure
+flex(dir=row, wrapping=nowrap, align=center, x-align=stretch, gap=0)
+  display flex
+  flex-flow dir wrapping
+  justify-content align
+  align-items x-align
+  gap gap
+
+// Motion
+cube-out = "cubic-bezier(0.33,1,0.68,1)"
+animate(props, duration=0.25s, ease=cube-out)
+  strout = ''
+  for prop, i in props
+    strout += prop + ' ' + duration + ' ' + ease
+    if i < length(props) - 1
+      strout += ', '
+  transition unquote(strout)
+
+animate-colors()
+  animate(( background-color color ))
+
+underline(col=lite, h=1px, b=1px, w=100%)
+  position relative
+  &::before
+    content ''
+    position absolute
+    width 0%
+    height h
+    bottom b
+    left "calc((100% - %s) / 2)" % w
+    background-color col
+    visibility hidden
+    animate(all, 0.2s)
+  &:hover, &:focus
+    &::before
+      visibility visible
+      width w
+      left "calc((100% - %s) / 2)" % w
+      right 50%
+
+@keyframes rgbcycle
+  0%
+    filter hue-rotate(0deg)
+  50%
+    filter hue-rotate(180deg)
+  100%
+    filter hue-rotate(360deg)
+
+@keyframes float
+  0%, 100%
+    bottom 24px
+  50%
+    bottom 40px
+
+rgb-cycle()
+  animation rgbcycle 9s infinite
+
+hover-highlight(col=accent)
+  position relative
+  &::before
+    content ''
+    position absolute
+    width 0%
+    height 100%
+    bottom 1px
+    left 0px
+    background-color col
+    animate(width, 0.2s)
+    border-radius 4px
+    z-index -1
+  &:hover
+    color lite
+    &::before
+      width 100%
+      left 0px
+      right 50%
+
+// Hovers
+hover-border()
+  transition outline 0.1s cube-out, filter 0.2s ease-in-out
+  outline 0px solid transparent
+  &:hover
+    outline 2px solid accent
+    filter brightness(110%) saturate(150%)
+
+hover-color(col)
+  &:hover
+    background-color col
+
+hover-colors(bgCol, fgCol)
+  &:hover
+    background-color bgCol
+    color fgCol
+
+hover-svg(col)
+  svg
+    animate(fill)
+  &:hover svg svg
+    fill col
+
+// Breakpoints
+tablet()
+  @media screen and (min-width 500px)
+    {block}
+
+laptop()
+  @media screen and (min-width 768px)
+    {block}
+
+standard()
+  @media screen and (min-width 928px)
+    {block}

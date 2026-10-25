@@ -1,0 +1,70 @@
+.music
+  flex(row, nowrap, start, start, 16px)
+  margin-bottom 32px
+  &-art
+    width 156px
+    height 156px
+  &-meta
+    flex(column, nowrap, start, start, 16px)
+    width 100%
+    &-title
+      height 32px
+    &-text
+      sub(32px, dark, 700, italic)
+      margin-bottom 0
+    &-detail
+      font-weight bold
+      color neutral-2
+      margin-bottom -4px
+    &-tracks
+      width 100%
+      border-width 0 0 0 1px
+      border-style solid
+      border-color neutral
+      border-radius 4px
+  &-track
+    flex(row, nowrap, space-between, center)
+    &-inner
+      flex(row, nowrap, space-between, center)
+      mono(14px, dark)
+      letter-spacing -0.3px
+      padding 2px 8px
+      user-select none
+      cursor pointer
+      width 100%
+      border-width 0 1px 0 0
+      border-style solid
+      border-color neutral
+    &:first-child > &-inner
+      border-width 1px 1px 0 0
+    &:last-child > &-inner
+      border-width 0 1px 1px 0
+    &-main
+      flex(row, nowrap, stretch, center, 4px)
+    &-ctrl
+      color accent
+      &-active
+        color neutral-2
+    &-sub
+      mono(10px, neutral-2, 700, italic)
+    b
+      font-weight 900
+    &-num
+      mono(11px, neutral-2)
+      letter-spacing -0.3px
+    &-length
+      mono(11px, neutral-1,, italic)
+    &-expander
+      mono(14px, neutral-2)
+      padding 2px 2px 2px 6px
+      user-select none
+      cursor pointer
+      border-width 1px 1px 0 0
+      border-style solid
+      border-color neutral
+      border-radius 0 4px 4px 0
+      &:hover
+        background-color accent
+        color lite
+    &:last-child > &-expander
+      border-width 1px 1px 1px 0

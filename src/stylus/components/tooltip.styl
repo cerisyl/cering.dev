@@ -1,0 +1,33 @@
+.tooltip
+  display inline-block
+  border-bottom 1px dotted dark
+  position relative
+  &-text
+    flex(column, nowrap, x-align: center)
+    text(14px, dark, bold)
+    opacity 0
+    width max-content
+    max-width 120px
+    background-color lite
+    text-align center
+    border-radius 4px
+    padding 4px 8px
+    position absolute
+    z-index 3
+    bottom 24px
+    left 50%
+    transform translateX(-50%)
+    animate(opacity)
+    box-shadow 0 0 2px 1px neutral
+    &::after
+      content ""
+      position absolute
+      top 100%
+      left 50%
+      margin-left -5px
+      border-width 5px
+      border-style solid
+      border-color lite transparent transparent transparent
+  &:hover .tooltip-text,
+  &:active .tooltip-text
+    opacity 1

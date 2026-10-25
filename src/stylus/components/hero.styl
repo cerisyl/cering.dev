@@ -1,0 +1,43 @@
+.hero
+  margin-bottom -4px
+  img
+    width 100%
+    border-radius 8px
+    border 1px solid accent
+    background-color accent
+    hover-border()
+  &-withside
+    margin-bottom -4px
+    img
+      width 100%
+      border-radius 0 8px 8px 0
+      border 1px solid accent
+      background-color accent
+      border-left none
+
+.home
+  &-heroes
+    flex(column, nowrap, start, start, gap: 8px)
+    margin-bottom 8px
+    &-main
+      flex(row, nowrap, start, stretch)
+      user-select none
+      hover-border()
+      border-radius 8px
+      p
+        position relative
+        specify(10px, dark, bold)
+        letter-spacing 10px
+        margin-bottom 0
+        writing-mode sideways-lr
+        text-align left
+        padding 12px 5px
+        border-radius 8px 0 0 8px
+        background url("/img/dither.png")
+        image-rendering pixelated
+        border 1px solid accent
+        border-right none
+    &-ex
+      flex(row, nowrap, space-between, start, gap: 8px)
+      &-l
+        flex(column, nowrap, start, start, gap: 8px)

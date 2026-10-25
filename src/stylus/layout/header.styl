@@ -1,0 +1,59 @@
+hsize = 70px
+
+.header
+  background linear-gradient(90deg, accent 20%, lite 100%)
+  height hsize * 0.5
+  margin-bottom hsize * 0.5
+  user-select none
+  position sticky
+  top 0
+  z-index 20
+  &-inner
+    height hsize
+    flex(row, nowrap, start, center)
+    padding 0 0 0 12px
+    background linear-gradient(90deg, accent 20%, lite 100%)
+    clip-path path("M0,0v70h294.790344c8.919373,0,21.112915-1.919357,32.177429-5.080643l87.387085-24.838711 C425.419373,36.919357,437.612946,35,446.532257,35H800V0")
+  &-end
+    position absolute
+    top 5px
+    right 6px
+    span
+      mono(18px, dark, 900)
+      display inline-block
+      width 20px
+      text-shadow 2px 2px 3px neutral
+  &-bottom
+    flex(row, nowrap, right, center, 8px)
+    position relative
+    top "calc(%s * -0.5)" % hsize
+    background dark
+    height "calc(%s * 0.5)" % hsize
+    z-index -1
+    padding 16px
+    p
+      text(12px, lite)
+      text-align right
+      margin-bottom 0
+    select
+      text(12px, dark)
+
+.logo
+  display block
+  position relative
+  svg
+    width 164px
+    margin-top 3px
+    path
+      fill lite
+  &-title
+    flex(column, nowrap, start, gap: 0)
+    text(11px, lite, bold, italic)
+    position absolute
+    top 51px
+    letter-spacing 0.3px
+    max-height 20px
+    &-inner
+      position absolute
+      min-width 124px
+      text-align right

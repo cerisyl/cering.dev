@@ -1,0 +1,194 @@
+@require './util/color'
+@require './util/fonts'
+@require './util/mixins'
+@require './util/reset'
+@require './layout/footer'
+@require './layout/header'
+@require './layout/sidebar'
+@require './components/action'
+@require './components/chart'
+@require './components/masonry'
+@require './components/mix'
+@require './components/modals'
+@require './components/music'
+@require './components/greebles'
+@require './components/hero'
+@require './components/lang'
+@require './components/strip'
+@require './components/toggles'
+@require './components/tooltip'
+@require './pages/aster'
+@require './pages/commissions'
+@require './pages/itg'
+@require './pages/misfits'
+@require './pages/njsrt'
+@require './pages/resume'
+@require './pages/website'
+
+html
+  scrollbar-color neutral-1 lite
+  scrollbar-width thin
+body
+  background-color lite
+  max-width 990px
+  // flex(row, nowrap, center) //resume
+.main
+  overflow-x visible
+  flex(row, nowrap, start, stretch)
+  min-height 100vh
+  min-height calc(100dvh - 72px)
+  border-right 1px solid lite-color
+  &-inner
+    flex(column, nowrap, start, stretch)
+    border-top 4px solid lite
+  &.raw .main-inner
+    border-top none
+.raw
+  border none !important
+  a
+    text-decoration underline
+h1
+  head(72px, dark, 700, italic)
+  margin-bottom 16px
+.h1-img
+  margin-bottom 0
+  image-rendering pixelated
+  user-select none
+  pointer-events none
+h2
+  head(42px, dark, 700)
+  margin-bottom 16px
+h3
+  head(28px, dark, 700)
+  margin-bottom 16px
+.hsub
+  text(22px, dark)
+p, li, .text
+  text(16px, dark, 400)
+  line-height 20px
+  text-align justify
+p, ul
+  margin-bottom 16px
+.large
+  head(28px, dark, 700)
+  margin-bottom 16px
+li::before
+  content "▸ "
+  position relative
+  text(12px, dark, 400)
+  bottom 2px
+  margin-right 4px
+ul
+  list-style-type none
+  list-style-position inside
+a
+  color link
+  font-weight 700
+  &:not(.block-link)
+    underline(link)
+b
+  font-weight 700
+i
+  font-style italic
+hr
+  background-color neutral-2
+  border 0
+  margin 16px auto 16px
+  height 1px
+  width 200px
+img
+  user-select none
+
+.content
+  padding 12px
+  min-height calc(100dvh - 72px - 70px)
+  width 777px
+  &-inner
+    margin -16px 0
+    padding 12px
+  &-outer
+    flex(row, nowrap, space-between)
+    mono(14px, neutral-2, 200)
+    margin 0
+    user-select none
+
+.overlays img
+  z-index 10
+  position fixed
+  overflow hidden
+  opacity 0.05
+  mix-blend-mode overlay
+  pointer-events none
+  image-rendering pixelated
+  width 1520px
+
+.center
+  text-align center
+  align-self center
+.right
+  text-align right
+  align-self right
+
+.no-bold
+  font-weight normal
+
+.comment
+  text(14px, neutral-2, bold, italic)
+  margin-bottom 8px
+
+.spacer
+  margin-bottom 16px
+  &2x
+    margin-bottom 32px
+  &0
+    margin-bottom 0px
+
+.external::after
+  content ''
+  mono(0.66em, inherit)
+  position relative
+  top -0.66em
+  left -1px
+
+.symbol
+  mono(12px, inherit)
+  position relative
+  top -6px
+  left -1px
+
+.gaps
+  display flex
+  justify-content center
+  align-items center
+  &-2
+    @extends .gaps
+    gap 2px
+  &-8
+    @extends .gaps
+    gap 8px
+  &-16
+    @extends .gaps
+    gap 16px
+  &-32
+    @extends .gaps
+    gap 32px
+  &-space
+    display flex
+    justify-content space-between
+
+.flex-col
+  display flex
+  flex-flow column nowrap
+
+.double
+  flex(row, nowrap, space-between)
+  &-left, &-right
+    width 50%
+    flex-grow 1
+  &-left
+    margin-right 24px
+
+.grow-2
+  width 66%
+.grow-3
+  width 75%

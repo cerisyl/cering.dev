@@ -1,0 +1,21 @@
+.strip
+  position relative
+  img
+    width 100%
+    background-color accent
+    border-radius 4px
+  &:hover
+    filter brightness(110%) saturate(150%)
+  &-tag
+    position absolute
+    background-color _yellow
+    bottom 4px
+    right 0
+    margin-bottom 0px
+    padding 2px 8px 0 120px
+    helv(14px, dark)
+    border-radius 999px 0 2px 0
+
+.strips
+  flex(column, nowrap, align: center, x-align: center, gap: 8px)
+  margin-bottom 16px

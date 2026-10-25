@@ -1,0 +1,105 @@
+load-font(name, file, w=normal, st=normal)
+  @font-face
+    font-family name
+    font-style st
+    font-weight w
+    src url("../fonts/" + file + ".woff2")
+    font-display swap
+
+load-font("Barlow", "Barlow-Regular", 400)
+load-font("Barlow", "Barlow-Italic", 400, italic)
+load-font("Barlow", "Barlow-SemiBold", 600)
+load-font("Barlow", "Barlow-SemiBoldItalic", 600, italic)
+
+load-font("Inter Display", "InterDisplay-Bold", bold)
+load-font("Inter Display", "InterDisplay-BoldItalic", bold, italic)
+
+load-font("Helvetica83", "HelveticaNeueLT83-BoldItalic")
+load-font("Specify", "SpecifyExExp")
+load-font("Specify", "SpecifyExExp-Bold", bold)
+load-font("Stretch Pro", "stretchpro")
+
+
+head(sz, c=white, w=400, st=normal)
+  font sz "Inter Display", sans-serif
+  color c
+  font-weight w
+  font-style st
+  letter-spacing -0.04em
+  font-feature-settings 'case' 1, 'ss01' 1, 'ss03' 1
+
+sub(sz, c=white, w=400, st=normal)
+  font sz "Inter Display", sans-serif
+  color c
+  font-weight w
+  font-style st
+  letter-spacing 0
+
+text(sz, c=white, w=400, st=normal)
+  font sz "Barlow", sans-serif
+  color c
+  font-weight w
+  font-style st
+  letter-spacing -0.01em
+
+mono(sz, c=white, w=400, st=normal)
+  font sz "JetBrainsMono Nerd Font", monospace
+  color c
+  font-weight w
+  font-style st
+  letter-spacing 0
+
+helv(sz, c=white)
+  font sz "Helvetica83", sans-serif
+  color c
+
+specify(sz, c=white, w=400)
+  font sz "Specify", sans-serif
+  color c
+  font-weight w
+
+stretch(sz, c=white, w=400)
+  font sz "Stretch Pro", sans-serif
+  color c
+  font-weight w
+  line-height sz*1.3
+
+//itg
+load-font("Mega", "mega")
+load-font("Eurostile", "Eurostile-Black", black)
+load-font("Serpentine", "serpentine", bold)
+load-font("Venture13", "venture13")
+load-font("Aroundabout", "aroundabout")
+load-font("Inversionz", "inversionz")
+
+mega(sz, c=white)
+  font sz "Mega", sans-serif
+  color c
+  letter-spacing 0
+
+eurostile(sz, c=white, w=900)
+  font sz "EurostileT", sans-serif
+  color c
+  font-weight w
+
+inversionz(sz, c=white)
+  font sz "Inversionz", sans-serif
+  color c
+
+serpentine(sz, c=white, w=700)
+  font sz "Serpentine", sans-serif
+  color c
+  font-weight w
+
+venture(sz, c=white)
+  font sz "Venture13", sans-serif
+  color c
+
+around(sz, c=white)
+  font sz "Aroundabout", sans-serif
+  color c
+  letter-spacing 4px
+
+inversionz(sz, c=white)
+  font sz "Inversionz", sans-serif
+  color c

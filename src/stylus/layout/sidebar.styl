@@ -1,0 +1,97 @@
+nav-header()
+  specify(7px, neutral-1)
+  letter-spacing 5px
+
+.nav
+  flex(column, nowrap, space-between, start)
+  padding 16px
+  background-color lite-color
+  user-select none
+  position sticky
+  height calc(100dvh - 72px)
+  top 70px
+  z-index 2
+  &-main
+    flex(column, nowrap, start, stretch, 24px)
+  &-container
+    flex()
+    margin-bottom 8px
+    margin-left -8px
+  &-section
+    position relative
+    user-select none
+    &-icon
+      mono(64px, alpha(accent, 10%))
+      position absolute
+      left -30px
+      top -24px
+      z-index 0
+    &-side
+      position relative
+      stretch(14px, accent)
+      margin-bottom 0px
+      writing-mode sideways-lr
+      text-align right
+    &-header
+      nav-header()
+      margin -3px 8px 4px
+  &-header
+    nav-header()
+    margin-bottom 0
+
+  &-sublinks
+    flex(column, nowrap, start, start)
+    z-index 1
+    a
+      mono(14px, dark, 700)
+      width 168px
+      padding 1px 8px
+      border-radius 4px
+      hover-highlight()
+      animate(color, 0.1s)
+      &:hover .nav-chip,
+      &:focus .nav-chip
+        color lite
+      &:hover .nav-attn,
+      &:focus .nav-attn
+        color #bdb6de
+  &-attn
+    mono(10px, accent, 900, italic)
+    position relative
+    top -4px
+    letter-spacing -0.05em
+    animate(color, 0.2s)
+  &-chip
+    mono(8px, dark)
+    position relative
+    top -6px
+    margin-right 3px
+    animate(color, 0.1s)
+  &-bottom
+    width 100%
+  &-webring
+    width 100%
+    flex(row, nowrap, space-between)
+    margin-bottom 0
+    text-align center
+    user-select none
+    border-radius 3px
+    border 1px solid dark
+    &-l, &-r
+      mono(14px, lite, 900)
+      line-height 11px
+      background-color accent
+      padding 0 16px
+      hover-color(dark)
+    &-c
+      background-color #bdb6de
+      mono(10.5px, dark, 900)
+      line-height 11px
+      // border-width 0 1px
+      // border-color dark
+      // border-style solid
+      width 100%
+    &-l
+      border-radius 2px 0 0 2px
+    &-r
+      border-radius 0 2px 2px 0

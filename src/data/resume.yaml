@@ -1,0 +1,198 @@
+skills:
+  - category: webdev
+    sort: {it: 3}
+    detail:
+      - {skill: svelte, text: Svelte/SvelteKit}
+      - {skill: react, text: React}
+      - {skill: js, text: JavaScript, comment: "TypeScript, Node, Express"}
+      - {skill: css, text: CSS, comment: "+ Stylus, Sass"}
+      - {skill: html, text: HTML, comment: "+ Pug, Markdown"}
+      - {skill: sql, text: SQL, comment: "MySQL, SQLite"}
+      - {skill: git, text: Git}
+      - {skill: vite, text: Vite}
+      - {skill: apache, text: Apache}
+
+  - category: programming
+    sort: {it: 2}
+    detail:
+      - {skill: py, text: Python}
+      - {skill: bash, text: Bash}
+      - {skill: ps, text: PowerShell}
+      - {skill: lua, text: Lua}
+
+  - category: it/systems
+    sort: {it: 1}
+    detail:
+      - {skill: ad, text: Active Directory}
+      - {skill: epm, text: Endpoint Management, comment: "MECM/SCCM, Jamf, Axonius"}
+      - {skill: vm, text: Virtualization, comment: "QEMU, VMware, Hyper-V"}
+      - {skill: win, text: Windows, comment: "+ Windows Server"}
+      - {skill: mac, text: macOS}
+      - {skill: linux, text: Linux, comment: "NixOS, Ubuntu, RHEL"}
+      - {skill: net, text: Networking, comment: "DNS, DHCP, TCP, SSH, Samba"}
+
+  - category: productivity
+    detail:
+      - {skill: ai, text: AI tools, comment: "Claude, ChatGPT", hidden: {gen: true}}
+      - {skill: adobe, text: Adobe Creative Suite, comment: "Photoshop, Illustrator, InDesign"}
+      - {skill: office, text: Microsoft 365 (Office), comment: "Word, Excel, PowerPoint"}
+
+  - category: soft skills
+    detail:
+      - {skill: adapt, text: adaptability}
+      - {skill: facilitate, text: facilitation}
+      - {skill: create, text: creativity}
+      - {skill: lead, text: leadership}
+      - {skill: solve, text: problem solving}
+      - {skill: present, text: presentation}
+      - {skill: comms, text: communication}
+      - {skill: multi, text: multitasking}
+
+experience:
+  - title:    IT Specialist
+    employer: University of Illinois Urbana-Champaign
+    location: Urbana, IL
+    dates:    [2024-09-16]
+    detail:
+      - text: troubleshoot and resolve technical issues with white-glove customer service at an institution of higher education
+        skill: [adapt, solve, comms]
+        sort: {it: 1}
+      - text: utilize Active Directory, MECM, Jamf, and Red Hat Satellite to provision, image, and manage endpoints
+        skill: [ad, epm, win, mac, linux]
+        sort: {it: 1}
+      - text: design, develop, and uplift an inventory webapp to the University web portal using SvelteKit, Express, and the TeamDynamix API
+        skill: [create, svelte, js, css, html, git]
+        sort: {dev: 1}
+      - text: manage and improve a flagship device lifecycle management service for over 500 full-time staff
+        skill: [lead, multi]
+        sort: {it: 1}
+      - text: improve automation in Active Directory and TeamDynamix through API interactions using PowerShell and Bash
+        skill: [create, ad, ps, bash]
+        sort: {dev: 1}
+      - text: manage and troubleshoot network infrastructure and protocols such as DNS, DHCP, SSH, RDP, and Samba
+        skill: [solve, net]
+        sort: {it: 1}
+      - text: establish excellent rapport with stakeholders and customers of various technical skill
+        skill: [comms]
+        sort: {it: 1}
+      - text: utilize Claude and ChatGPT to develop scripts, improve services, and work efficiency
+        skill: [ai, multi]
+        hidden: {gen: true}
+        sort: {dev: 1}
+      - text: lead opportunities to uplift colleagues and foster team skills through formation of working groups
+        skill: [lead]
+      - text: facilitate and contribute to cross-functional teams, synthesizing and presenting outcomes to management
+        skill: [facilitate, lead, present]
+      - text: create, maintain, and audit documentation and knowledge base articles for colleagues and end users
+        skill: [office, comms]
+      - text: chair and participate in hiring committees, reviewing resumes and leading interviews
+        skill: []
+
+  - title:    IT Specialist
+    employer: Raritan Public Library
+    location: Raritan, NJ
+    dates:    [2021-02-03, 2024-09-10]
+    detail:
+      - text: design, develop, and maintain a full-stack web solution using vanilla JavaScript, Apache, and Node.js
+        skill: [create, js, apache, css, html, git]
+        sort: {it: 2, dev: 1}
+      - text: manage back-end web processes and API calls using cron jobs and Bash scripts
+        skill: [bash]
+        sort: {it: 2, dev: 1}
+      - text: provide excellent technological assistance to patrons and Library staff of varying skill levels
+        skill: [win, mac, adapt, solve, comms]
+        sort: {it: 1, dev: 2}
+      - text: lead migration of legacy library system using a self-written suite of Python scripts to interface with SQL databases
+        skill: [py, sql]
+        sort: {it: 2, dev: 1}
+      - text: manage a secure Windows environment using Active Directory, conducting regular audits
+        skill: [win, win, ad]
+        sort: {it: 1}
+      - text: troubleshoot and resolve network issues, mainly wireless connectivity, DNS records, and DHCP configurations
+        skill: [solve, net]
+        sort: {it: 1, dev: 2}
+      - text: maintain WCAG accessibility and SEO best practices through regular Google Lighthouse audits
+        skill: [css, html]
+        sort: {dev: 1}
+      - text: utilize Umami to provide website analytics and statistics to improve engagement
+        skill: [js]
+        sort: {dev: 1}
+      - text: design and distribute event flyers, promotional graphics, and newsletters using Adobe Creative Cloud software
+        skill: [create, adobe]
+      - text: coordinate and manage virtual programming and online Library board meetings using Zoom
+        skill: [facilitate]
+        sort: {dev: 1}
+      - text: assist hiring new staff by writing job postings, reviewing resumes, and corresponding with applicants
+        skill: []
+
+  - title:    Chart Designer
+    employer: lowiro limited
+    location: London, UK (remote)
+    dates:    [2019-11-27, 2024-08-16]
+    hidden:   {it: true}
+    detail:
+      - text: develop playable content for <i>Arcaea</i> and <i>In Falsus</i> using proprietary level design software
+        skill: [create, adapt]
+      - text: apply game design and music theory to create levels varying in difficulty spanning across musical genres
+        skill: [create]
+      - text: conduct regular peer reviews of content in development with detailed feedback
+        skill: []
+      - text: develop and document schema for proprietary data types
+        skill: []
+
+  - title:    Computer Technician
+    employer: Safe Haven Computers
+    location: Raritan, NJ
+    dates:    [2019-08-19, 2021-01-29]
+    hidden:   {gen: true, dev: true}
+    detail:
+      - text: diagnose, troubleshoot, and resolve software and hardware issues for customers in a small business environment
+        skill: [solve, win, mac, net]
+      - text: independently manage shop storefront, handling service paperwork and purchase orders
+        skill: [lead]
+      - text: discuss, quote, and image computer systems for individuals and small businesses
+        skill: [create, solve, office]
+      - text: manage users and security groups for small business clients using Active Directory
+        skill: [ad, win]
+
+  - title:    Undergraduate Research Associate
+    employer: New Jersey Institute of Technology (NJIT)
+    location: Newark, NJ
+    dates:    [2017-06-12, 2018-05-18]
+    hidden:   {gen: true, it: true}
+    detail:
+      - text: analyze atmospheric data using Python, numpy and pandas
+        skill: [py]
+      - text: design web forms and graphic assets using Drupal, PHP, SQL, and Adobe Photoshop
+        skill: [create, sql, html, css, adobe]
+      - text: <a class="external" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018GL077324" target="_blank" rel="noopener">publish research</a> and present at various conferences
+        skill: [present]
+
+projects:
+  - title:  NixOS Configuration
+    href:   https://github.com/cerisyl/nix
+    dates:  [2025-04-13]
+    detail:
+      - text: develop and maintain a reproducable system configuration across multiple devices
+        skill: [linux]
+      - text: demonstrate a deep understanding of Linux environments, the Nix language, and CLI environments
+        skill: [linux, bash]
+      - text: manage systemd services such as ssh, samba, libvirt, and xrdp
+        skill: [vm, net]
+      - text: maintain up-to-date documentation, including detailed features and installation instructions
+        skill: []
+      - text: version control using Git
+        skill: [git]
+
+  - title:  Cardigan
+    href:   https://soraeee.github.io/cardigan/
+    dates:  [2023-09-19, 2024-02-05]
+    detail:
+      - text: collaborate to create a scalable webapp used to run tournaments with 100+ participants
+        skill: [create, react, js, css, html, vite]
+      - text: create custom UI design resources and functionality using React
+        skill: [create, react]
+      - text: implement full mobile support and styling using Sass CSS
+        skill: [css]
+      - text: version control using Git, conducting reviews and pull requests from contributors
+        skill: [git]

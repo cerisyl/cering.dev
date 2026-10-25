@@ -1,0 +1,38 @@
+toggle()
+  flex(align: center, x-align: center)
+  background-color lite
+  text-align center
+  sub(16px, dark, bold)
+  user-select none
+  cursor pointer
+  padding 4px 16px
+  border-radius 4px
+
+.toggle
+  toggle()
+  background-color dark
+  color lite
+  hover-color(neutral-2)
+  &-disabled
+    background-color neutral
+    cursor default
+    color neutral-2
+    hover-color(neutral)
+
+.togglebar
+  flex()
+  outline 1px solid dark
+  border-radius 4px
+  &-label
+    sub(16px, dark, bold)
+    margin-bottom 0
+  &-first, &-piece
+    toggle()
+    hover-colors(dark, lite)
+    border-radius 0
+  &-piece
+    border-left 1px
+    border-left 1px solid dark
+  &-on
+    background-color dark
+    color lite

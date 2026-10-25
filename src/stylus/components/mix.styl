@@ -1,0 +1,48 @@
+.mix
+  flex(column, nowrap, start, gap: 8px)
+  width 100%
+  &-metadata
+    flex(row, nowrap, space-between, end)
+    &-main
+      flex(column-reverse, nowrap, start)
+  &-title
+    flex(row, nowrap, start, end, 6px)
+  &-artist
+    text(14px, neutral-2, bold, italic)
+    margin-bottom -4px
+  &-pack
+    text(16px, neutral-2, bold, italic)
+    margin-bottom 4px
+  &-genre
+    padding 1px 12px 3px
+    background-color neutral
+    color neutral-2
+    font-weight bold
+    font-size 14px
+    margin-bottom 0
+    text-transform uppercase
+    border-radius 4px
+  &-player
+    flex(rowm nowrap, start, gap: 8px)
+  &-download
+    mono(26px, lite)
+    display inline-block
+    border-radius 4px
+    background-color accent
+    user-select none
+    cursor pointer
+    hover-color(#9d69ff)
+    padding 2px 18px 0 9px
+  &-audio
+    width 100%
+  &-contents
+    background-color lite-color
+    padding 12px 16px
+    border-radius 4px
+    margin-bottom 16px
+  &-song
+    margin-bottom 0
+    mono(12px, dark)
+    &-time
+      display inline-block
+      width 48px

@@ -1,0 +1,51 @@
+fsize = 70px
+
+.footer
+  z-index 20
+  flex(row, nowrap, flex-end, center)
+  padding 8px 16px
+  background-color accent
+  position sticky
+  height fsize * 0.5 + 1px
+  margin-top fsize * 0.5 + 1px
+  width 100%
+  user-select none
+  bottom 0
+  filter drop-shadow(0px -4px 0 lite);
+  &-inner
+    flex(row, nowrap, left, center, 12px)
+    background-color accent
+    clip-path path("M 0 70 V 0 H 294.7903 C 303.7097 -0 315.9033 1.9194 326.9678 5.0806 L 414.3549 29.9194 C 425.4194 33.0806 437.6129 35 446.5323 35 H 800 V 70")
+    position absolute
+    width 100%
+    height fsize
+    left 0
+    bottom 0
+    padding 16px
+  &-text
+    margin-top 1px
+    margin-bottom 0
+    line-height 15px
+    color lite
+  &-shouts
+    flex(row, nowrap, start, center, 8px)
+    specify(7px, lite)
+    letter-spacing 2px
+    margin-left 1px
+    margin-top 2px
+
+.socials
+  flex(row, nowrap, center, center, gap: 2px)
+  margin-right -8px
+  z-index 2
+  margin-bottom -2px
+  &-link
+    svg
+      width 16px
+      margin-bottom -2px
+    fill lite
+    border-radius 4px
+    padding 4px 5px 4px 5px
+    margin 3px
+    &:hover
+      background mix(accent, dark, 75%)
