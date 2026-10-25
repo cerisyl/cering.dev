@@ -4,6 +4,7 @@
   import Footer from 'components/layout/Footer.svelte';
 
   let { children } = $props();
+  export const prerender = true;
 </script>
 
 <div class="overlays" aria-hidden="true">
