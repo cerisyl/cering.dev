@@ -2,6 +2,7 @@
   import Header from 'components/layout/Header.svelte';
   import Sidebar from 'components/layout/Sidebar.svelte';
   import Footer from 'components/layout/Footer.svelte';
+  import '../stylus/main.styl';
 
   let { children } = $props();
   export const prerender = true;
